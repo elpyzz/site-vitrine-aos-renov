@@ -3,7 +3,9 @@ import Link from "next/link";
 const legalLinks = [
   { href: "/mentions-legales", label: "Mentions légales" },
   { href: "/cgv", label: "CGV" },
+  { href: "/cgu", label: "CGU" },
   { href: "/confidentialite", label: "Politique de confidentialité" },
+  { href: "/politique-cookies", label: "Politique de cookies" },
 ];
 
 export function Footer() {
