@@ -2,16 +2,16 @@ import Link from "next/link";
 import { LegalLayout } from "@/components/layout/LegalLayout";
 
 export const metadata = {
-  title: "Politique de confidentialité — BTP Pilot",
+  title: "Politique de confidentialité — Aos Renov",
   description:
-    "Politique de confidentialité et protection des données personnelles (RGPD) du service BTP Pilot : données collectées, finalités, droits, cookies et contact.",
+    "Politique de confidentialité et protection des données personnelles (RGPD) du service Aos Renov : données collectées, finalités, droits, cookies et contact.",
 };
 
 export default function ConfidentialitePage() {
   return (
     <LegalLayout
       title="Politique de confidentialité"
-      description="Dernière mise à jour : [DATE]. Cette politique décrit comment [Nom société] traite les données personnelles dans le cadre du service BTP Pilot."
+      description="Dernière mise à jour : 25 février 2025. Cette politique décrit comment Aos Renov traite les données personnelles dans le cadre du service Aos Renov."
     >
       {/* Encadré engagement */}
       <div
@@ -29,7 +29,7 @@ export default function ConfidentialitePage() {
           1. Introduction
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          [Nom société], [Forme juridique], dont le siège est situé au [Adresse], édite le service BTP Pilot, 
+          Aos Renov, Micro-entreprise, dont le siège est situé au Le Haillan 33185, France, édite le service Aos Renov, 
           outil de gestion destiné aux professionnels du BTP (devis, factures, planning chantiers, envoi par email, 
           relances manuelles, conversion devis → facture en un clic). Nous nous engageons à protéger les données 
           personnelles des utilisateurs et des clients dans le respect du Règlement général sur la protection des 
@@ -75,9 +75,9 @@ export default function ConfidentialitePage() {
           2.4 Données de navigation
         </h3>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Données techniques (adresse IP, type de navigateur, pages visitées, horodatage) et, le cas échéant, 
-          cookies ou traceurs pour le fonctionnement du site, la mesure d'audience ou l'amélioration du service 
-          (voir section « Cookies »).
+          Données techniques (adresse IP, type de navigateur, pages visitées, horodatage) et cookies strictement 
+          nécessaires au fonctionnement du site (voir section « Cookies »). Aucun outil d'analyse d'audience 
+          tiers n'est utilisé.
         </p>
       </section>
 
@@ -124,7 +124,7 @@ export default function ConfidentialitePage() {
           Les données sont conservées pour la durée nécessaire aux finalités concernées, dans les limites suivantes :
         </p>
         <ul className="list-disc list-inside space-y-2 text-[hsl(var(--foreground))]">
-          <li><strong>Clients actifs :</strong> pendant la durée du contrat et le temps nécessaire à la gestion de la relation, aux réclamations et aux obligations légales après la fin du contrat.</li>
+          <li><strong>Clients actifs :</strong> pendant la durée du contrat et le temps nécessaire à la gestion de la relation, aux réclamations et aux obligations légales après la fin du contrat. Les données du compte sont conservées 30 jours après la résiliation (export possible pendant ce délai).</li>
           <li><strong>Prospects (demandes de contact, démo, non conclus) :</strong> au maximum 3 ans à compter du dernier contact, sauf consentement ou obligation légale.</li>
           <li><strong>Obligations comptables :</strong> les pièces et données à caractère comptable peuvent être conservées 10 ans lorsque la loi l'exige.</li>
         </ul>
@@ -139,7 +139,7 @@ export default function ConfidentialitePage() {
           6. Hébergement et sécurité
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Les données sont hébergées [en France / dans l'Union européenne – placeholder] par [Hébergeur]. 
+          Les données sont hébergées dans l'Union européenne (région Europe). Le site est hébergé par Vercel, la base de données par Supabase. 
           Nous mettons en œuvre des mesures techniques et organisationnelles adaptées pour protéger les données, 
           notamment :
         </p>
@@ -165,10 +165,10 @@ export default function ConfidentialitePage() {
           missions et dans le respect du droit applicable :
         </p>
         <ul className="list-disc list-inside space-y-2 text-[hsl(var(--foreground))]">
-          <li><strong>Hébergeur :</strong> [Hébergeur], pour l'hébergement des serveurs et des données.</li>
-          <li><strong>Prestataire de paiement :</strong> [Prestataire paiement], pour le traitement des paiements (données de facturation, moyens de paiement dans la limite de ce qu'il reçoit).</li>
+          <li><strong>Hébergeur :</strong> Vercel (site), Supabase (base de données), région Europe (UE), pour l'hébergement des serveurs et des données.</li>
+          <li><strong>Prestataire de paiement :</strong> Stripe, pour le traitement des paiements (données de facturation, moyens de paiement dans la limite de ce qu'il reçoit).</li>
           <li><strong>Outils d'emailing :</strong> prestataires utilisés pour l'envoi d'emails transactionnels ou, le cas échéant, de prospection, sous contrat et dans le respect des garanties requises.</li>
-          <li><strong>Analytics :</strong> [Outils analytics si utilisés – ou « aucun outil d'analyse de trafic tiers » si non utilisés].</li>
+          <li><strong>Analytics :</strong> aucun outil d'analyse de trafic tiers (pas de Google Analytics, pas de Meta Pixel).</li>
         </ul>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
           Nous ne vendons pas et ne revendons pas vos données personnelles à des tiers à des fins commerciales. 
@@ -228,9 +228,8 @@ export default function ConfidentialitePage() {
           9.2 Cookies statistiques
         </h3>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Cookies ou traceurs destinés à mesurer l'audience, le cas échéant : [Outils analytics si utilisés – 
-          ou préciser « aucun outil tiers » si non utilisés]. Leur dépôt peut être subordonné à votre 
-          consentement selon la réglementation en vigueur.
+          Aucun cookie de mesure d'audience tiers n'est utilisé (pas de Google Analytics, pas de Meta Pixel). 
+          Seuls des cookies techniques sont déposés pour le fonctionnement du site et de l'application.
         </p>
         <h3 className="text-lg font-medium text-[hsl(var(--foreground))] mt-4">
           9.3 Paramétrage
@@ -251,8 +250,8 @@ export default function ConfidentialitePage() {
           Pour toute question relative à la protection de vos données ou pour exercer vos droits :
         </p>
         <ul className="list-none space-y-2 text-[hsl(var(--foreground))] mt-4">
-          <li><strong>Email dédié :</strong> [Email contact RGPD]</li>
-          <li><strong>Adresse postale :</strong> [Nom société], [Adresse]</li>
+          <li><strong>Email dédié :</strong> aosrenovbtp@gmail.com</li>
+          <li><strong>Adresse postale :</strong> Aos Renov, Le Haillan 33185, France</li>
         </ul>
         <p className="text-[hsl(var(--foreground))] leading-relaxed mt-4">
           Vous pouvez également utiliser le{" "}

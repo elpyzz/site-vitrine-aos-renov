@@ -2,16 +2,16 @@ import Link from "next/link";
 import { LegalLayout } from "@/components/layout/LegalLayout";
 
 export const metadata = {
-  title: "Politique de cookies — BTP Pilot",
+  title: "Politique de cookies — Aos Renov",
   description:
-    "Politique de cookies du site BTP Pilot : types de cookies, base légale, durée, gestion et contact, conformément au RGPD et aux recommandations CNIL.",
+    "Politique de cookies du site Aos Renov : types de cookies, base légale, durée, gestion et contact, conformément au RGPD et aux recommandations CNIL.",
 };
 
 export default function PolitiqueCookiesPage() {
   return (
     <LegalLayout
       title="Politique de cookies"
-      description="Dernière mise à jour : [DATE]. Cette page vous informe sur l'utilisation des cookies sur le site BTP Pilot édité par [Nom société]."
+      description="Dernière mise à jour : 25 février 2025. Cette page vous informe sur l'utilisation des cookies sur le site Aos Renov édité par Aos Renov."
     >
       {/* 1. Introduction */}
       <section className="space-y-4">
@@ -25,9 +25,9 @@ export default function PolitiqueCookiesPage() {
           mesure d'audience). Les cookies sont gérés par votre navigateur.
         </p>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Le site BTP Pilot ([Nom société]) utilise des cookies pour assurer le bon fonctionnement du site 
-          vitrine, sécuriser votre navigation, et, le cas échéant, mesurer l'audience afin d'améliorer nos 
-          contenus et services. La présente politique précise les types de cookies utilisés, leur finalité, 
+          Le site Aos Renov utilise des cookies strictement nécessaires au fonctionnement du site vitrine et 
+          à la sécurisation de votre navigation. Aucun outil d'analyse tiers (Google Analytics, Meta Pixel, etc.) 
+          n'est utilisé. La présente politique précise les types de cookies utilisés, leur finalité, 
           leur durée et les moyens dont vous disposez pour les gérer, conformément au RGPD et aux 
           recommandations de la CNIL.
         </p>
@@ -53,21 +53,16 @@ export default function PolitiqueCookiesPage() {
           2.2 Cookies de mesure d'audience
         </h3>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Lorsque nous utilisons un outil de mesure d'audience, des cookies ou traceurs peuvent être déposés 
-          pour analyser le trafic du site (nombre de visites, pages consultées, provenance) via [Outil 
-          analytics utilisé si applicable – ou indiquer « Nous n'utilisons pas de cookies de mesure d'audience » 
-          si aucun outil n'est utilisé]. Les données sont traitées de manière agrégée et anonymisée dans la 
-          mesure du possible. Le dépôt de ces cookies est subordonné à votre consentement.
+          Nous n'utilisons pas de cookies de mesure d'audience ni d'outils d'analyse tiers (pas de Google 
+          Analytics, pas de Meta Pixel). Seuls des cookies techniques sont déposés.
         </p>
 
         <h3 className="text-lg font-medium text-[hsl(var(--foreground))] mt-4">
           2.3 Cookies de préférences
         </h3>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Des cookies peuvent enregistrer vos préférences (par exemple mémorisation de vos choix sur le 
-          bandeau cookies) pour améliorer votre expérience lors de vos prochaines visites. Lorsqu'ils ne 
-          sont pas strictement nécessaires au fonctionnement, leur dépôt peut être subordonné à votre 
-          consentement.
+          Les éventuels cookies de préférences (par exemple mémorisation de vos choix sur le bandeau cookies) 
+          sont limités au strict nécessaire au fonctionnement du site.
         </p>
 
         <h3 className="text-lg font-medium text-[hsl(var(--foreground))] mt-4">
@@ -132,7 +127,7 @@ export default function PolitiqueCookiesPage() {
           6. Modification de la politique
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          [Nom société] se réserve le droit de modifier la présente politique de cookies pour refléter les 
+          Aos Renov se réserve le droit de modifier la présente politique de cookies pour refléter les 
           évolutions du site, des outils utilisés ou de la réglementation. La date de dernière mise à jour 
           sera indiquée en tête de page. Nous vous invitons à la consulter régulièrement. En cas de changement 
           substantiel, une information pourra vous être communiquée par tout moyen adapté (bandeau sur le site, 
@@ -146,7 +141,7 @@ export default function PolitiqueCookiesPage() {
           7. Contact
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Pour toute question relative aux cookies ou à la présente politique : [Nom société], [Email contact]. 
+          Pour toute question relative aux cookies ou à la présente politique : Aos Renov, aosrenovbtp@gmail.com. 
           Vous pouvez également consulter notre{" "}
           <Link href="/confidentialite" className="text-[hsl(var(--accent))] underline hover:no-underline">
             politique de confidentialité

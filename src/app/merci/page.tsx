@@ -3,7 +3,7 @@ import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {
-  title: "Message envoyé — BTP Pilot",
+  title: "Message envoyé — Aos Renov",
   description: "Votre demande a bien été envoyée. Nous vous recontactons rapidement.",
   robots: "noindex, follow",
 };

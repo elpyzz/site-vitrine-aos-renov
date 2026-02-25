@@ -45,7 +45,7 @@ export function ProblemSolution() {
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 shrink-0 text-green-700 dark:text-green-400" />
                 <h3 className="text-lg font-semibold text-green-800 dark:text-green-300">
-                  Votre quotidien avec BTP Pilot
+                  Votre quotidien avec Aos Renov
                 </h3>
               </div>
               <ul className="mt-4 space-y-2 text-sm text-green-900/90 dark:text-green-200/90">

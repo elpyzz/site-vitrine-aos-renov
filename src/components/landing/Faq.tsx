@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 const faqItems = [
   {
     q: "Je travaille seul ou en petite équipe, est-ce fait pour moi ?",
-    a: "Oui. BTP Pilot est pensé pour les artisans indépendants et les petites structures. Devis, factures et planning : tout est prévu pour gérer votre activité au quotidien sans usine à gaz.",
+    a: "Oui. Aos Renov est pensé pour les artisans indépendants et les petites structures. Devis, factures et planning : tout est prévu pour gérer votre activité au quotidien sans usine à gaz.",
   },
   {
     q: "En combien de temps je peux faire mon premier devis ?",
@@ -18,7 +18,7 @@ const faqItems = [
   },
   {
     q: "Est-ce que le logiciel est compliqué à utiliser ?",
-    a: "Non. BTP Pilot est conçu pour être simple : premier devis en moins de 10 minutes, pas de formation longue. On vous accompagne au lancement si besoin.",
+    a: "Non. Aos Renov est conçu pour être simple : premier devis en moins de 10 minutes, pas de formation longue. On vous accompagne au lancement si besoin.",
   },
   {
     q: "Mes données et celles de mes clients sont-elles en sécurité ?",
@@ -30,7 +30,7 @@ const faqItems = [
   },
   {
     q: "Je suis souvent sur le chantier, je peux utiliser l'outil sur mon téléphone ?",
-    a: "Oui. BTP Pilot est accessible depuis smartphone ou tablette : consulter votre planning, envoyer un devis ou une relance en déplacement, c'est possible.",
+    a: "Oui. Aos Renov est accessible depuis smartphone ou tablette : consulter votre planning, envoyer un devis ou une relance en déplacement, c'est possible.",
   },
   {
     q: "Combien ça me coûtera réellement ?",

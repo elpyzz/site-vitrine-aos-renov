@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -49,8 +50,15 @@ export function Hero() {
             </p>
           </div>
           <div className="relative flex justify-center lg:justify-end">
-            <div className="rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--muted))]/30 aspect-video w-full max-w-md flex items-center justify-center">
-              <span className="text-sm text-[hsl(var(--muted-foreground))]">Visuel à venir</span>
+            <div className="relative w-full max-w-md overflow-hidden rounded-lg border border-[hsl(var(--border))] shadow-lg">
+              <Image
+                src="/hero-aos-renov.png"
+                alt="Aos Renov - Construire pour durer - Application de gestion chantiers, devis et équipes"
+                width={800}
+                height={500}
+                className="w-full object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

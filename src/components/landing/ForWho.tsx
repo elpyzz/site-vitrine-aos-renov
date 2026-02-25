@@ -19,7 +19,7 @@ export function ForWho() {
       <div className="container mx-auto px-4">
         <h2 className="text-2xl font-bold sm:text-3xl">Pensé pour les artisans indépendants</h2>
         <p className="mt-2 max-w-2xl text-[hsl(var(--muted-foreground))]">
-          Vous travaillez seul ou en petite équipe ? BTP Pilot est conçu pour simplifier votre quotidien.
+          Vous travaillez seul ou en petite équipe ? Aos Renov est conçu pour simplifier votre quotidien.
         </p>
         <p className="mt-6 text-sm font-medium text-[hsl(var(--foreground))]">
           Que vous soyez :

@@ -3,9 +3,9 @@ import { LegalLayout } from "@/components/layout/LegalLayout";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {
-  title: "Conditions générales de vente (CGV) — BTP Pilot",
+  title: "Conditions générales de vente (CGV) — Aos Renov",
   description:
-    "Conditions générales de vente du service BTP Pilot : objet, prix, durée, résiliation, responsabilité, support et droit applicable.",
+    "Conditions générales de vente du service Aos Renov : objet, prix, durée, résiliation, responsabilité, support et droit applicable.",
 };
 
 const sommaire = [
@@ -35,7 +35,7 @@ export default function CgvPage() {
   return (
     <LegalLayout
       title="Conditions Générales de Vente (CGV)"
-      description="Version en vigueur au [date]. Les présentes conditions s'appliquent aux offres et contrats conclus avec [Raison sociale] pour l'utilisation du service BTP Pilot."
+      description="Version en vigueur au 25 février 2025. Les présentes conditions s'appliquent aux offres et contrats conclus avec Aos Renov pour l'utilisation du service Aos Renov."
     >
       {/* Sommaire */}
       <nav
@@ -67,8 +67,8 @@ export default function CgvPage() {
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
           Les présentes Conditions Générales de Vente (CGV) ont pour objet de définir les conditions dans lesquelles 
-          [Raison sociale], dont le siège est situé au [Adresse], immatriculée au RCS [RCS], SIRET [SIRET], 
-          numéro de TVA [TVA] (ci-après « le Prestataire »), propose et fournit le service BTP Pilot aux clients 
+          Aos Renov, dont le siège est situé au Le Haillan 33185, France, RCS en cours d'immatriculation, SIRET en cours d'attribution, 
+          TVA non applicable (article 293 B du CGI) (ci-après « le Prestataire »), propose et fournit le service Aos Renov aux clients 
           professionnels (ci-après « le Client »). Le Client agit en tant que professionnel dans le cadre de son 
           activité. Les dispositions relatives aux consommateurs (Code de la consommation) ne s'appliquent pas au 
           présent contrat, sauf disposition impérative contraire.
@@ -81,7 +81,7 @@ export default function CgvPage() {
           2. Définitions
         </h2>
         <ul className="list-none space-y-2 text-[hsl(var(--foreground))]">
-          <li><strong>Service :</strong> l'application BTP Pilot, accessible notamment à l'adresse [URL du site], et les fonctionnalités associées.</li>
+          <li><strong>Service :</strong> l'application Aos Renov et les fonctionnalités associées.</li>
           <li><strong>Compte :</strong> l'espace utilisateur créé par le Client pour accéder au Service.</li>
           <li><strong>Contenu :</strong> les données, devis, factures et informations saisies ou générées par le Client dans le Service.</li>
           <li><strong>Abonnement :</strong> la souscription au Service pour une durée et selon des conditions tarifaires définies.</li>
@@ -94,11 +94,11 @@ export default function CgvPage() {
           3. Description du service
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          BTP Pilot est un outil de gestion destiné aux professionnels du BTP et aux artisans. Il permet notamment 
+          Aos Renov est un outil de gestion destiné aux professionnels du BTP et aux artisans. Il permet notamment 
           d'établir des devis et des factures, de gérer un planning de chantiers, d'envoyer des documents par email 
           aux clients, d'effectuer des relances manuelles (via bouton) et de convertir un devis accepté en facture 
           en un clic sans ressaisie. Selon l'offre souscrite, une fonctionnalité d'estimation via photo peut être 
-          proposée. L'ensemble des fonctionnalités est décrit sur le site [URL du site] et peut évoluer ; le 
+          proposée. L'ensemble des fonctionnalités est décrit sur le site et peut évoluer ; le 
           Prestataire s'efforce d'en informer le Client dans la limite du raisonnable.
         </p>
       </section>
@@ -122,9 +122,10 @@ export default function CgvPage() {
           5. Essai / démo
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Aucun essai gratuit en libre accès n'est proposé. La découverte du Service s'effectue sur démo organisée 
-          avec le Prestataire (présentation, démonstration, éventuelle période d'évaluation selon l'offre). 
-          Les conditions de la démo et d'éventuelle période d'essai sont précisées au cas par cas.
+          Un essai gratuit de 14 jours est proposé, sans carte bancaire demandée, avec accès à toutes les 
+          fonctionnalités. Aucune activation automatique payante n'est effectuée à la fin de l'essai ; le 
+          Client souscrit explicitement à l'abonnement s'il souhaite poursuivre. La découverte du Service 
+          peut également s'effectuer sur démo organisée avec le Prestataire.
         </p>
       </section>
 
@@ -137,13 +138,11 @@ export default function CgvPage() {
           Les prix sont indiqués en euros HT sauf mention contraire. La TVA applicable est celle en vigueur.
         </p>
         <ul className="list-none space-y-2 text-[hsl(var(--foreground))]">
-          <li><strong>Frais de mise en service / setup :</strong> [2 500 €] (HT ou TTC selon facturation). Ce forfait comprend le paramétrage du compte, l'accompagnement à la prise en main et, le cas échéant, l'import ou l'initialisation des données selon les modalités convenues.</li>
-          <li><strong>Abonnement mensuel :</strong> [200 € / mois] (HT ou TTC selon facturation). L'abonnement comprend l'accès au Service, les mises à jour dans le cadre de la version souscrite, le support selon le niveau d'offre et les sauvegardes réalisées par le Prestataire dans les conditions prévues aux présentes.</li>
+          <li><strong>Frais de mise en service (setup) :</strong> 2 000 € HT, payable en une seule fois, non remboursable. Ce forfait comprend le paramétrage du compte, l'accompagnement à la prise en main et, le cas échéant, l'import ou l'initialisation des données selon les modalités convenues.</li>
+          <li><strong>Abonnement :</strong> 200 € HT par mois. L'abonnement comprend l'accès au Service, les mises à jour, le support et les sauvegardes réalisées par le Prestataire dans les conditions prévues aux présentes.</li>
         </ul>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Modalités de paiement : [prélèvement automatique / carte bancaire / virement – à préciser]. Les factures 
-          sont adressées par [email / courrier – placeholder]. Tout changement de tarif est soumis aux dispositions 
-          de la section « Modification des CGV ».
+          Paiement : prélèvement automatique mensuel via Stripe. Une facture est envoyée chaque mois par email. Tout changement de tarif est soumis aux dispositions de la section « Modification des CGV ».
         </p>
       </section>
 
@@ -153,12 +152,13 @@ export default function CgvPage() {
           7. Durée / renouvellement / résiliation
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          L'abonnement est conclu pour une durée initiale puis reconduit tacitement par période [mensuelle – placeholder] 
-          à échéance, sauf résiliation par l'une des parties. Le Client peut résilier à tout moment en respectant 
-          un préavis de [X jours / 1 mois – placeholder] avant la fin de la période en cours. La résiliation 
-          prend effet à l'expiration de cette période. Le Prestataire peut résilier dans les conditions prévues 
-          aux présentes (impayés, manquement grave, etc.). En cas de résiliation, l'accès au Service cesse à la 
-          date d'effet ; l'export des données reste possible dans les conditions de la section « Réversibilité / export ».
+          L'abonnement est conclu avec un engagement minimum de 6 mois. À l'issue des 6 mois, il se reconduit 
+          tacitement par période mensuelle, sauf résiliation par l'une des parties. Le Client peut résilier à 
+          tout moment après la période initiale d'engagement en respectant un préavis de 30 jours avant la fin 
+          de la période en cours. La résiliation prend effet à l'expiration de cette période. Le Prestataire peut 
+          résilier dans les conditions prévues aux présentes (impayés, manquement grave, etc.). En cas de 
+          résiliation, l'accès au Service cesse à la date d'effet ; l'export des données reste possible dans les 
+          conditions de la section « Réversibilité / export ».
         </p>
       </section>
 
@@ -168,11 +168,12 @@ export default function CgvPage() {
           8. Retard de paiement / pénalités / suspension d'accès
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          En cas de retard de paiement, des pénalités de retard peuvent être appliquées au taux [légal – placeholder] 
-          et une indemnité forfaitaire pour frais de recouvrement peut être réclamée. Le Prestataire se réserve le 
-          droit de suspendre l'accès au Service après mise en demeure restée sans effet, sans préjudice des 
-          dommages et intérêts éventuels. La suspension n'emporte pas résiliation du contrat ; le Client reste 
-          redevable des sommes dues.
+          En cas de retard de paiement, sont applicables les pénalités légales B2B : intérêts de retard au taux 
+          de la Banque centrale européenne (BCE) majoré de 10 points, et indemnité forfaitaire de 40 € pour 
+          frais de recouvrement. Le Prestataire se réserve le droit de suspendre l'accès au Service après mise 
+          en demeure restée sans effet (suspension possible dès 7 jours en cas d'impayé). En cas d'impayé 
+          persistant, les données peuvent être supprimées après 30 jours. La suspension n'emporte pas résiliation 
+          du contrat ; le Client reste redevable des sommes dues.
         </p>
       </section>
 
@@ -197,7 +198,7 @@ export default function CgvPage() {
           10. Propriété intellectuelle
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Le Service, le logiciel, la marque BTP Pilot et les contenus fournis par le Prestataire (documentation, 
+          Le Service, le logiciel, la marque Aos Renov et les contenus fournis par le Prestataire (documentation, 
           interfaces, etc.) restent la propriété exclusive du Prestataire ou de ses ayants droit. Le Client ne 
           dispose que d'un droit d'usage du Service dans le cadre de son Abonnement. Les Contenus créés par le 
           Client lui appartiennent ; il concède au Prestataire les droits nécessaires à l'hébergement, à la 
@@ -233,7 +234,7 @@ export default function CgvPage() {
           le Prestataire en informe le Client lorsque cela est raisonnablement possible. Dans les limites 
           autorisées par la loi, la responsabilité du Prestataire est limitée aux dommages directs et 
           prévisibles ; elle ne pourra excéder le montant des sommes effectivement versées par le Client 
-          au titre des [X] derniers mois (ou selon plafond à définir – placeholder).
+          au titre des 12 derniers mois.
         </p>
       </section>
 
@@ -256,13 +257,11 @@ export default function CgvPage() {
           14. Réversibilité / export des données
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          À la demande du Client, et dans un délai raisonnable, le Prestataire met à disposition les données 
-          du Client dans un format [exportable – placeholder, ex. CSV, PDF selon les types de données]. 
-          Les modalités précises (format, délai, coût éventuel) sont [définies sur demande / précisées dans 
-          l'offre – placeholder]. À l'issue de la relation contractuelle, le Client peut demander la remise 
-          de ses données dans les conditions prévues ; au-delà d'un délai de [X jours – placeholder] après 
-          la résiliation, le Prestataire peut procéder à l'effacement des données conformément à sa politique 
-          de conservation.
+          Les données saisies dans le Service appartiennent au Client. À sa demande, le Prestataire met à 
+          disposition un export des données dans un délai raisonnable (format adapté : CSV, PDF ou autre selon 
+          les types de données). À l'issue de la relation contractuelle, les données sont conservées pendant 
+          30 jours après la résiliation, pendant lesquels le Client peut demander son export ; au-delà, le 
+          Prestataire peut procéder à l'effacement des données.
         </p>
       </section>
 
@@ -272,10 +271,8 @@ export default function CgvPage() {
           15. Support
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Le support est fourni selon l'offre souscrite. Canaux : [email / téléphone / ticket – placeholder]. 
-          Horaires : [jours et créneaux – placeholder]. Les niveaux de support (réponse standard, prioritaire, 
-          etc.) sont décrits dans l'offre ; l'offre Pro peut inclure un support prioritaire. Le Prestataire 
-          s'efforce de répondre dans des délais raisonnables sans garantir un délai fixe.
+          Le support est fourni par email (aosrenovbtp@gmail.com) et par téléphone (07 69 43 03 43). Le 
+          Prestataire s'efforce de répondre dans des délais raisonnables sans garantir un délai fixe.
         </p>
       </section>
 
@@ -285,8 +282,8 @@ export default function CgvPage() {
           16. Sous-traitants / prestataires
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Le Prestataire peut faire appel à des sous-traitants ou prestataires (hébergement [Nom de l'hébergeur], 
-          outils techniques, etc.) pour la fourniture du Service. Il s'assure que ceux-ci respectent des 
+          Le Prestataire peut faire appel à des sous-traitants ou prestataires (hébergement du site : Vercel ; 
+          base de données : Supabase ; paiement : Stripe ; région Europe/UE) pour la fourniture du Service. Il s'assure que ceux-ci respectent des 
           obligations compatibles avec les présentes CGV et le droit applicable en matière de données 
           personnelles.
         </p>
@@ -301,7 +298,7 @@ export default function CgvPage() {
           Aucune des parties ne pourra être tenue responsable en cas d'inexécution imputable à un cas de 
           force majeure (événement échappant au contrôle raisonnable, imprévisible et irrésistible). La partie 
           concernée en informe l'autre dans les meilleurs délais. En cas de persistance au-delà d'une durée 
-          [à définir – placeholder], chaque partie pourra résilier le contrat sans indemnité.
+          raisonnable, chaque partie pourra résilier le contrat sans indemnité.
         </p>
       </section>
 
@@ -312,8 +309,7 @@ export default function CgvPage() {
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
           Le Prestataire peut modifier les présentes CGV. Les modifications sont notifiées au Client par 
-          [email / notification dans le Service – placeholder] au moins [X jours – placeholder] avant leur 
-          entrée en vigueur. En cas de désaccord, le Client peut résilier le contrat avant la date d'effet ; 
+          email ou notification dans le Service au moins 30 jours avant leur entrée en vigueur. En cas de désaccord, le Client peut résilier le contrat avant la date d'effet ; 
           à défaut, les nouvelles conditions s'appliquent. Les conditions tarifaires peuvent être modifiées 
           dans les mêmes conditions de notification ; en cas d'augmentation, le Client dispose du droit de 
           résilier sans pénalité avant la prise d'effet.
@@ -327,7 +323,7 @@ export default function CgvPage() {
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
           Les présentes CGV sont régies par le droit français. En cas de litige, et après éventuelle tentative 
-          de résolution amiable, les tribunaux du ressort de [Ville] seront seuls compétents.
+          de résolution amiable, les tribunaux du ressort de Bordeaux seront seuls compétents.
         </p>
       </section>
 
@@ -337,9 +333,9 @@ export default function CgvPage() {
           20. Contact
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Pour toute question relative aux présentes CGV ou au Service : [Raison sociale], [Adresse], 
-          email [Email], téléphone [Téléphone]. Responsable : [Nom du responsable]. Vous pouvez également 
-          utiliser le formulaire de contact du site.
+          Pour toute question relative aux présentes CGV ou au Service : Aos Renov, Le Haillan 33185, France, 
+          email aosrenovbtp@gmail.com, téléphone 07 69 43 03 43. Directeur de la publication : Pereira Louis. 
+          Vous pouvez également utiliser le formulaire de contact du site.
         </p>
       </section>
 

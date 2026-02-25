@@ -15,7 +15,7 @@ export function Footer() {
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
             <Link href="/" className="font-semibold text-lg text-[hsl(var(--accent))]">
-              BTP Pilot
+              Aos Renov
             </Link>
             <p className="mt-2 max-w-xs text-sm text-[hsl(var(--muted-foreground))]">
               Devis, factures et planning pour artisans — simple et rapide.
@@ -50,7 +50,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-[hsl(var(--border))] text-center text-sm text-[hsl(var(--muted-foreground))]">
-          © {new Date().getFullYear()} BTP Pilot. Tous droits réservés.
+          © {new Date().getFullYear()} Aos Renov. Tous droits réservés.
         </div>
       </div>
     </footer>

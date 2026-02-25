@@ -45,7 +45,7 @@ export function Trust() {
           ))}
         </div>
         <p className="mt-10 text-center text-sm font-medium text-[hsl(var(--foreground))]">
-          BTP Pilot est conçu pour être simple, fiable et durable.
+          Aos Renov est conçu pour être simple, fiable et durable.
         </p>
       </div>
     </section>

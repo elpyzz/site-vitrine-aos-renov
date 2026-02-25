@@ -33,7 +33,7 @@ export function Testimonials() {
       <div className="container mx-auto px-4">
         <h2 className="text-2xl font-bold sm:text-3xl">Avis d’artisans</h2>
         <p className="mt-3 text-lg font-medium text-[hsl(var(--foreground))]">
-          Pourquoi les artisans passent à BTP Pilot ?
+          Pourquoi les artisans passent à Aos Renov ?
         </p>
         <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-sm text-[hsl(var(--muted-foreground))] sm:gap-x-8">
           {whyBullets.map((item) => (

@@ -26,7 +26,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2 font-semibold text-lg">
           {/* TODO: remplacer par le vrai logo */}
-          <span className="text-[hsl(var(--accent))]">BTP Pilot</span>
+          <span className="text-[hsl(var(--accent))]">Aos Renov</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

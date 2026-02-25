@@ -2,16 +2,16 @@ import Link from "next/link";
 import { LegalLayout } from "@/components/layout/LegalLayout";
 
 export const metadata = {
-  title: "Conditions générales d'utilisation (CGU) — BTP Pilot",
+  title: "Conditions générales d'utilisation (CGU) — Aos Renov",
   description:
-    "Conditions générales d'utilisation du site vitrine et de la plateforme BTP Pilot : accès, utilisation, responsabilité, propriété intellectuelle et droit applicable.",
+    "Conditions générales d'utilisation du site vitrine et de la plateforme Aos Renov : accès, utilisation, responsabilité, propriété intellectuelle et droit applicable.",
 };
 
 export default function CguPage() {
   return (
     <LegalLayout
       title="Conditions Générales d'Utilisation (CGU)"
-      description="Version en vigueur au [DATE]. Les présentes CGU définissent les règles d'utilisation du site vitrine et de l'application BTP Pilot, édités par [Nom société]."
+      description="Version en vigueur au 25 février 2025. Les présentes CGU définissent les règles d'utilisation du site vitrine et de l'application Aos Renov, édités par Aos Renov."
     >
       {/* 1. Objet */}
       <section className="space-y-4">
@@ -20,10 +20,10 @@ export default function CguPage() {
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
           Les présentes Conditions Générales d'Utilisation (CGU) ont pour objet de définir les règles 
-          d'utilisation du site vitrine BTP Pilot (site d'information, formulaire de contact, demandes de 
-          démo) et de la plateforme en ligne BTP Pilot (application SaaS : devis, factures, planning 
+          d'utilisation du site vitrine Aos Renov (site d'information, formulaire de contact, demandes de 
+          démo) et de la plateforme en ligne Aos Renov (application SaaS : devis, factures, planning 
           chantiers, envoi par email, relances manuelles, conversion devis → facture en un clic), tous deux 
-          édités par [Nom société], dont le siège est situé au [Adresse]. Elles s'appliquent à tout 
+          édités par Aos Renov, dont le siège est situé au Le Haillan 33185, France. Elles s'appliquent à tout 
           visiteur du site et à tout utilisateur disposant d'un accès à la plateforme. Les conditions 
           commerciales (tarifs, durée, facturation) sont régies par les{" "}
           <Link href="/cgv" className="text-[hsl(var(--accent))] underline hover:no-underline">
@@ -38,7 +38,7 @@ export default function CguPage() {
           2. Acceptation
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Toute utilisation du site vitrine ou de la plateforme BTP Pilot implique l'acceptation sans 
+          Toute utilisation du site vitrine ou de la plateforme Aos Renov implique l'acceptation sans 
           réserve des présentes CGU. En accédant au site ou en utilisant la plateforme (après création 
           de compte ou connexion), l'utilisateur reconnaît avoir pris connaissance des présentes conditions 
           et les accepter. En cas de désaccord, l'utilisateur doit cesser toute utilisation du site et 
@@ -52,11 +52,11 @@ export default function CguPage() {
           3. Accès au site et à la plateforme
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          <strong>Site vitrine :</strong> l'accès au site d'information est libre et gratuit. [Nom société] 
+          <strong>Site vitrine :</strong> l'accès au site d'information est libre et gratuit. Aos Renov 
           s'efforce d'en assurer la disponibilité sans toutefois garantir un accès ininterrompu.
         </p>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          <strong>Plateforme (application) :</strong> l'accès à la plateforme BTP Pilot est réservé aux 
+          <strong>Plateforme (application) :</strong> l'accès à la plateforme Aos Renov est réservé aux 
           utilisateurs disposant d'un compte actif, dans le cadre d'un abonnement ou d'une démo. L'accès 
           se fait par identifiants personnels et confidentiels (login, mot de passe). L'utilisateur est 
           responsable du caractère confidentiel de ses identifiants et de toute utilisation effectuée à 
@@ -72,9 +72,9 @@ export default function CguPage() {
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
           La création d'un compte sur la plateforme suppose la fourniture d'informations exactes, 
           complètes et à jour. L'utilisateur s'engage à ne pas usurper l'identité d'un tiers ni à 
-          communiquer de fausses informations. [Nom société] se réserve le droit de refuser ou de 
+          communiquer de fausses informations. Aos Renov se réserve le droit de refuser ou de 
           suspendre un compte en cas d'informations manifestement erronées ou frauduleuses. L'utilisateur 
-          est seul responsable des accès réalisés depuis son compte et doit informer [Nom société] sans 
+          est seul responsable des accès réalisés depuis son compte et doit informer Aos Renov sans 
           délai en cas d'utilisation non autorisée ou de perte de ses identifiants.
         </p>
       </section>
@@ -94,7 +94,7 @@ export default function CguPage() {
           d'accès non autorisé ou de perturbation du fonctionnement du site, de la plateforme ou des 
           systèmes associés ; l'introduction de virus ou de codes malveillants ; l'extraction ou la 
           réutilisation massive de contenus sans autorisation ; toute utilisation portant atteinte aux 
-          droits de tiers ou à l'image de [Nom société]. En cas de manquement, [Nom société] se réserve 
+          droits de tiers ou à l'image de Aos Renov. En cas de manquement, Aos Renov se réserve 
           le droit de suspendre ou supprimer le compte et, le cas échéant, d'engager des poursuites.
         </p>
       </section>
@@ -105,14 +105,14 @@ export default function CguPage() {
           6. Responsabilité
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          [Nom société] s'efforce d'assurer la disponibilité du site et de la plateforme dans le cadre 
+          Aos Renov s'efforce d'assurer la disponibilité du site et de la plateforme dans le cadre 
           d'une obligation de moyens. La disponibilité n'est pas garantie à 100 % ; des interruptions 
           (maintenance, incident technique, force majeure) peuvent survenir. Aucune obligation de 
           résultat n'est assumée quant au contenu, aux fonctionnalités ou aux performances du service.
         </p>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
           L'utilisateur reste seul responsable des données qu'il saisit, des documents qu'il génère 
-          (devis, factures) et des actes qu'il accomplit via le service. [Nom société] ne peut être 
+          (devis, factures) et des actes qu'il accomplit via le service. Aos Renov ne peut être 
           tenue responsable des erreurs, omissions ou dommages résultant de l'utilisation du service 
           par l'utilisateur, dans les limites autorisées par la loi.
         </p>
@@ -124,9 +124,9 @@ export default function CguPage() {
           7. Propriété intellectuelle
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          Le site, la plateforme, le logiciel, la marque BTP Pilot, les designs, les textes et les 
+          Le site, la plateforme, le logiciel, la marque Aos Renov, les designs, les textes et les 
           éléments graphiques sont protégés par le droit de la propriété intellectuelle et appartiennent 
-          à [Nom société] ou à ses ayants droit. L'utilisateur ne dispose que d'un droit d'usage du 
+          à Aos Renov ou à ses ayants droit. L'utilisateur ne dispose que d'un droit d'usage du 
           service dans le cadre prévu par le contrat et les présentes CGU.
         </p>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
@@ -144,7 +144,7 @@ export default function CguPage() {
           8. Suspension / suppression de compte
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          [Nom société] se réserve le droit de suspendre ou supprimer l'accès au compte et à la 
+          Aos Renov se réserve le droit de suspendre ou supprimer l'accès au compte et à la 
           plateforme, sans préavis ni indemnité, en cas de non-respect des présentes CGU, d'utilisation 
           frauduleuse ou illicite du service, de manquement aux obligations contractuelles (notamment 
           impayé) ou sur demande des autorités compétentes. La résiliation du contrat (CGV) peut 
@@ -176,9 +176,9 @@ export default function CguPage() {
           10. Modification des CGU
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
-          [Nom société] se réserve le droit de modifier les présentes CGU à tout moment. Les 
+          Aos Renov se réserve le droit de modifier les présentes CGU à tout moment. Les 
           modifications sont portées à la connaissance des utilisateurs par la mise à jour de la page 
-          et de la date « Version en vigueur au [DATE] ». En cas de changement substantiel, une 
+          et de la date « Version en vigueur au 25 février 2025 ». En cas de changement substantiel, une 
           information peut être diffusée sur le site ou par tout moyen adapté (email aux comptes 
           actifs, notification dans l'application) dans la limite du raisonnable. La poursuite de 
           l'utilisation du site ou de la plateforme après entrée en vigueur des nouvelles CGU vaut 
@@ -194,7 +194,7 @@ export default function CguPage() {
         </h2>
         <p className="text-[hsl(var(--foreground))] leading-relaxed">
           Les présentes CGU sont régies par le droit français. En cas de litige, et à défaut de 
-          résolution amiable, les tribunaux du ressort de [Ville tribunal] seront seuls compétents.
+          résolution amiable, les tribunaux du ressort de Bordeaux seront seuls compétents.
         </p>
       </section>
 
@@ -204,7 +204,7 @@ export default function CguPage() {
           Contact et documents associés
         </p>
         <p className="text-sm text-[hsl(var(--foreground))] mb-4">
-          Pour toute question : [Nom société], [Adresse], [Email].
+          Pour toute question : Aos Renov, Le Haillan 33185, France, aosrenovbtp@gmail.com.
         </p>
         <ul className="flex flex-wrap gap-4 text-sm">
           <li>

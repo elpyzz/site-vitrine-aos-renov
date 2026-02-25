@@ -1,0 +1,21 @@
+---
+description: Exécuter add, commit et push Git sur main quand l'utilisateur le demande
+alwaysApply: false
+---
+
+# Git add / commit / push
+
+Quand l'utilisateur demande d'ajouter, committer et pousser sur Git (ex. "add git push", "git push", "mets tout sur le main"), faire automatiquement :
+
+1. **Si `git` est disponible** (dans le PATH ou via chemin complet) :
+   - `git add .`
+   - `git commit -m "<message pertinent ou défaut>"`
+   - `git push origin main`
+
+2. **Si `git` n'est pas reconnu** dans le terminal :
+   - Exécuter le script du projet : `git-push.bat` (à la racine), qui tente plusieurs emplacements de Git sous Windows.
+
+3. **Si Git est introuvable** :
+   - Indiquer à l'utilisateur d'installer Git pour Windows (https://git-scm.com/download/win) en cochant "Add Git to PATH", ou d'utiliser GitHub Desktop pour faire le commit et le push manuellement.
+
+Branche par défaut : `main`. Remote : `origin`.

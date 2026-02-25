@@ -1,6 +1,6 @@
-# BTP Pilot — Site vitrine
+# Aos Renov — Site vitrine
 
-Site vitrine (landing page) pour l’application SaaS BTP Pilot, destinée aux artisans du BTP.
+Site vitrine (landing page) pour l’application SaaS Aos Renov, destinée aux artisans du BTP.
 
 ## Stack
 
@@ -90,13 +90,13 @@ npm start
 1. Pousser le projet sur GitHub (ou GitLab, Bitbucket).
 2. Aller sur [vercel.com](https://vercel.com) → **Add New Project** → importer le dépôt.
 3. Laisser les options par défaut (Framework: Next.js) et déployer.
-4. Optionnel : définir la variable d’environnement `NEXT_PUBLIC_SITE_URL` avec l’URL finale du site (ex. `https://btp-pilot.fr`) pour le sitemap.
+4. Optionnel : définir la variable d’environnement `NEXT_PUBLIC_SITE_URL` avec l’URL finale du site (ex. `https://aos-renov.fr`) pour le sitemap.
 
 **Note :** Les leads sont enregistrés dans `data/leads.json` sur le serveur. En production sur Vercel (serverless), ce fichier n’est pas persistant entre les invocations. Pour une vraie persistance, brancher une base de données ou un service (ex. Airtable, Notion, CRM) dans `src/app/api/lead/route.ts`.
 
 ## TODO personnalisation
 
-- **Nom / marque :** Remplacer "BTP Pilot" par le nom final du produit (recherche globale).
+- **Nom / marque :** Remplacer "Aos Renov" par le nom final du produit (recherche globale).
 - **Logo :** Ajouter le logo dans le Header (fichier dans `public/` et composant `<Image>` ou `<img>`).
 - **Textes :** Adapter tous les textes placeholder (hero, sections, FAQ, tarifs, légales).
 - **Images :**

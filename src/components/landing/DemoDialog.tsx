@@ -18,9 +18,9 @@ export function DemoDialog({ open, onOpenChange }: DemoDialogProps) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent showClose className="max-w-2xl">
         <DialogHeader>
-          <DialogTitle>Voir une démo BTP Pilot</DialogTitle>
+          <DialogTitle>Voir une démo Aos Renov</DialogTitle>
           <DialogDescription>
-            Découvrez en quelques minutes comment BTP Pilot simplifie vos devis, factures et plannings.
+            Découvrez en quelques minutes comment Aos Renov simplifie vos devis, factures et plannings.
           </DialogDescription>
         </DialogHeader>
         <div className="aspect-video w-full rounded-lg bg-[hsl(var(--muted))] flex items-center justify-center">
