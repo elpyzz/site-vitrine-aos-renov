@@ -23,9 +23,9 @@ export function CtaSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const err: typeof errors = {};
-    err.name = leadSchema.name(name);
-    err.email = leadSchema.email(email);
-    err.phone = leadSchema.phone(phone);
+    err.name = leadSchema.name(name) ?? undefined;
+    err.email = leadSchema.email(email) ?? undefined;
+    err.phone = leadSchema.phone(phone) ?? undefined;
     if (err.name || err.email || err.phone) {
       setErrors(err);
       return;
