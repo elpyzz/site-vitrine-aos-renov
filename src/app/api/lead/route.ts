@@ -74,9 +74,14 @@ export async function POST(request: Request) {
       ...parsed.data,
       createdAt: new Date().toISOString(),
     };
-    const leads = await readLeads();
-    leads.push(lead);
-    await writeLeads(leads);
+
+    try {
+      const leads = await readLeads();
+      leads.push(lead);
+      await writeLeads(leads);
+    } catch (fileErr) {
+      console.warn("[Lead API] Persistance fichier impossible (normal sur Vercel):", fileErr);
+    }
 
     if (!process.env.RESEND_API_KEY) {
       console.warn("[Lead API] RESEND_API_KEY absente : aucun email envoyé. Vérifiez .env.local et redémarrez le serveur.");
