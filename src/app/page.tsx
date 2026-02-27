@@ -1,6 +1,7 @@
 import { Hero } from "@/components/landing/Hero";
 import { ProblemSolution } from "@/components/landing/ProblemSolution";
 import { Features } from "@/components/landing/Features";
+import { AppScreenshots } from "@/components/landing/AppScreenshots";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { ForWho } from "@/components/landing/ForWho";
 import { Faq } from "@/components/landing/Faq";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Hero />
       <ProblemSolution />
       <Features />
+      <AppScreenshots />
       <HowItWorks />
       <ForWho />
       <Faq />
