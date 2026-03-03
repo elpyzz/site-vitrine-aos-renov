@@ -21,15 +21,19 @@ const trustItems = [
 
 export function Trust() {
   return (
-    <section className="border-b border-[hsl(var(--border))] bg-white py-20 md:py-24">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold sm:text-3xl text-center">Confiance</h2>
-        <p className="mt-2 max-w-2xl mx-auto text-center text-[hsl(var(--muted-foreground))]">
+    <section className="relative overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-[#F6FBFF]/40 to-white py-20 md:py-24">
+      <div className="absolute left-0 bottom-1/4 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl" aria-hidden />
+      <div className="container relative mx-auto px-4">
+        <div className="text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
+          <span className="te-section-short-title mx-auto">Confiance</span>
+          <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">Confiance</h2>
+        </div>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-[hsl(var(--te-body))] animate-te-fade-up" style={{ animationDelay: "0.1s" }}>
           Un outil sérieux pour votre activité.
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
-          {trustItems.map(({ icon: Icon, title, description }) => (
-            <Card key={title} className="text-center transition-shadow hover:shadow-md">
+          {trustItems.map(({ icon: Icon, title, description }, i) => (
+            <Card key={title} className="animate-te-fade-up text-center shadow-sm transition-all duration-300 hover:shadow-lg" style={{ animationDelay: `${0.15 + i * 0.06}s` }}>
               <CardHeader>
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[hsl(var(--accent))]/10 text-[hsl(var(--accent))]">
                   <Icon className="h-6 w-6" />

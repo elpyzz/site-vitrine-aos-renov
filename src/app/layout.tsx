@@ -4,24 +4,6 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-// #region agent log
-if (typeof fetch !== "undefined") {
-  fetch("http://127.0.0.1:7481/ingest/155b9555-22a3-4566-a5b1-dcd194f1aadd", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "4b9e50" },
-    body: JSON.stringify({
-      sessionId: "4b9e50",
-      runId: "chunk-debug",
-      hypothesisId: "B",
-      location: "layout.tsx",
-      message: "layout server render",
-      data: { cwd: process.cwd?.() },
-      timestamp: Date.now(),
-    }),
-  }).catch(() => {});
-}
-// #endregion
-
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",

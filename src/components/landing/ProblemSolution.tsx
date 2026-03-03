@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { X, CheckCircle } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { X, CheckCircle, ArrowRight } from "lucide-react";
+import { SectionWaveToWhite } from "./SectionWave";
 
 const before = [
   "Vous faites vos devis le soir, quand la journée est déjà finie",
@@ -20,53 +19,72 @@ const after = [
 
 export function ProblemSolution() {
   return (
-    <section className="border-b border-[hsl(var(--border))] bg-[#f5f7fa] py-20 md:py-24">
-      <div className="container mx-auto px-4">
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <Card className="border-red-300 bg-red-50/80 dark:border-red-800 dark:bg-red-950/40">
-            <CardContent className="pt-6">
-              <div className="flex items-center gap-2">
-                <X className="h-5 w-5 shrink-0 text-red-700 dark:text-red-400" />
-                <h3 className="text-lg font-semibold text-red-800 dark:text-red-300">
-                  Votre quotidien aujourd'hui
-                </h3>
-              </div>
-              <ul className="mt-4 space-y-2 text-sm text-red-900/90 dark:text-red-200/90">
-                {before.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="text-red-500 dark:text-red-400">•</span> {item}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-          <Card className="border-green-300 bg-green-50/80 dark:border-green-800 dark:bg-green-950/40">
-            <CardContent className="pt-6">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 shrink-0 text-green-700 dark:text-green-400" />
-                <h3 className="text-lg font-semibold text-green-800 dark:text-green-300">
-                  Votre quotidien avec Aos Renov
-                </h3>
-              </div>
-              <ul className="mt-4 space-y-2 text-sm text-green-900/90 dark:text-green-200/90">
-                {after.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="text-green-600 dark:text-green-400">•</span> {item}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+    <section className="relative overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-[#F6FBFF] to-[#eef4f9] py-20 md:py-24">
+      {/* Forme décorative discrète en arrière-plan */}
+      <div className="absolute right-0 top-1/4 h-72 w-72 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl" aria-hidden />
+      <div className="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl" aria-hidden />
+
+      <div className="container relative mx-auto px-4">
+        <div className="mb-12 text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
+          <span className="te-section-short-title mx-auto">Avant / Après</span>
+          <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">
+            Votre quotidien change
+          </h2>
         </div>
-        <p className="mt-8 text-center text-base font-medium text-[hsl(var(--foreground))] sm:text-lg">
-          Moins d’administratif. Plus de chantier. Plus de sérénité.
+        <div className="grid gap-8 md:grid-cols-2">
+          <div
+            className="animate-te-fade-up rounded-2xl border border-red-200/80 bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl"
+            style={{ animationDelay: "0.1s" }}
+          >
+            <div className="h-1 w-16 rounded-full bg-red-400" aria-hidden />
+            <div className="mt-6 flex items-center gap-3">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-100 text-red-600">
+                <X className="h-6 w-6" />
+              </span>
+              <h3 className="text-lg font-semibold text-red-800">
+                Votre quotidien aujourd&apos;hui
+              </h3>
+            </div>
+            <ul className="mt-5 space-y-3 text-sm text-red-900/90">
+              {before.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" /> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div
+            className="animate-te-fade-up rounded-2xl border border-[hsl(var(--accent))]/20 bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <div className="h-1 w-16 rounded-full bg-[hsl(var(--accent))]" aria-hidden />
+            <div className="mt-6 flex items-center gap-3">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[hsl(var(--accent))]/10 text-[hsl(var(--accent))]">
+                <CheckCircle className="h-6 w-6" />
+              </span>
+              <h3 className="text-lg font-semibold text-[hsl(var(--te-dark))]">
+                Votre quotidien avec Aos Renov
+              </h3>
+            </div>
+            <ul className="mt-5 space-y-3 text-sm text-[hsl(var(--te-body))]">
+              {after.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[hsl(var(--accent))]" /> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <p className="mt-12 text-center text-lg font-medium text-[hsl(var(--te-dark))] animate-te-fade-up" style={{ animationDelay: "0.3s" }}>
+          Moins d&apos;administratif. Plus de chantier. Plus de sérénité.
         </p>
-        <div className="mt-6 flex justify-center">
-          <Button asChild size="lg">
-            <Link href="#comment-ca-marche">Voir comment ça fonctionne</Link>
-          </Button>
+        <div className="mt-8 flex justify-center animate-te-fade-up" style={{ animationDelay: "0.35s" }}>
+          <Link href="#comment-ca-marche" className="te-theme-btn">
+            Voir comment ça fonctionne <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
+      <SectionWaveToWhite />
     </section>
   );
 }

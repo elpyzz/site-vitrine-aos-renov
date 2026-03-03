@@ -29,9 +29,12 @@ const whyBullets = [
 
 export function Testimonials() {
   return (
-    <section id="avis" className="scroll-mt-20 border-b border-[hsl(var(--border))] bg-white py-20 md:py-24">
+    <section id="avis" className="relative scroll-mt-20 border-b border-[hsl(var(--border))] bg-[#FAFCFF] py-20 md:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold sm:text-3xl">Avis d’artisans</h2>
+        <div className="animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
+          <span className="te-section-short-title">Avis</span>
+          <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">Avis d’artisans</h2>
+        </div>
         <p className="mt-3 text-lg font-medium text-[hsl(var(--foreground))]">
           Pourquoi les artisans passent à Aos Renov ?
         </p>

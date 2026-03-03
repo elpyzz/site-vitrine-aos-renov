@@ -1,3 +1,5 @@
+"use client";
+
 import {
   FileText,
   Send,
@@ -6,7 +8,7 @@ import {
   Receipt,
   Zap,
 } from "lucide-react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { SectionWave } from "./SectionWave";
 
 const features = [
   {
@@ -41,32 +43,55 @@ const features = [
   },
 ];
 
+const variants = ["te-feature-card-variant-accent", "te-feature-card-variant-skye", "te-feature-card-variant-orange"] as const;
+
 export function Features() {
   return (
-    <section id="fonctionnalites" className="scroll-mt-20 border-b border-[hsl(var(--border))] bg-white py-20 md:py-24">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold sm:text-3xl">Fonctionnalités</h2>
-        <p className="mt-2 max-w-2xl text-[hsl(var(--muted-foreground))]">
-          Tout ce dont vous avez besoin pour gérer votre activité au quotidien.
-        </p>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map(({ icon: Icon, title, description }) => (
-            <Card key={title} className="transition-shadow hover:shadow-md">
-              <CardHeader>
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(var(--accent))]/10 text-[hsl(var(--accent))]">
-                  <Icon className="h-5 w-5" />
+    <section id="fonctionnalites" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] bg-[#F6FBFF]/50 py-20 md:py-24">
+      {/* Forme décorative en coin */}
+      <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[hsl(var(--accent))]/8 blur-3xl" aria-hidden />
+      <div className="absolute -left-20 bottom-1/4 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/6 blur-3xl" aria-hidden />
+
+      <div className="container relative mx-auto px-4">
+        <div className="mb-14 text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
+          <span className="te-section-short-title mx-auto">Nos atouts</span>
+          <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">
+            Fonctionnalités
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-lg text-[hsl(var(--te-body))]">
+            Tout ce dont vous avez besoin pour gérer votre activité au quotidien.
+          </p>
+        </div>
+        <div className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map(({ icon: Icon, title, description }, index) => (
+            <div
+              key={title}
+              className={`te-card-hover animate-te-fade-up group relative rounded-2xl border border-[hsl(var(--border))] bg-white p-8 shadow-[0px_0px_60px_0px_rgba(0,0,0,0.06)] transition-all duration-500 hover:border-transparent hover:shadow-xl ${variants[index % variants.length]}`}
+              style={{ animationDelay: `${0.08 + index * 0.06}s` }}
+            >
+              <div>
+                <div className="te-info-card-inner flex flex-col gap-6">
+                  <div className="te-content-wrapper flex flex-col items-start text-left">
+                    <div className="te-title-wrapper flex flex-col items-start gap-4 pb-3">
+                      <span className="te-feature-icon-wrap flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-2 transition duration-300 group-hover:scale-105">
+                        <Icon className="h-7 w-7" />
+                      </span>
+                      <h3 className="text-xl font-medium text-[hsl(var(--te-dark))]">{title}</h3>
+                      <div className="te-feature-divider h-0.5 w-14 rounded" />
+                    </div>
+                    <div className="content flex flex-col items-start gap-2">
+                      <p className="desc m-0 text-[hsl(var(--te-body))] leading-relaxed">
+                        {description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold">{title}</h3>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-[hsl(var(--muted-foreground))]">
-                  {description}
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>
+      <SectionWave />
     </section>
   );
 }

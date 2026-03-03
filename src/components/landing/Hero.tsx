@@ -1,7 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Check, Phone, ArrowRight } from "lucide-react";
 
 const benefits = [
   "Transformez un devis en facture en 1 clic",
@@ -10,55 +11,108 @@ const benefits = [
   "Planning chantiers centralisé",
 ];
 
+/* Formes décoratives type template (gauche) */
+function HeroLeftShape() {
+  return (
+    <div className="absolute left-0 top-1/4 hidden w-32 opacity-40 lg:block" aria-hidden>
+      <svg width="168" height="320" viewBox="0 0 168 587" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-auto w-full">
+        <g opacity="0.6">
+          <path d="M69.1 152.3C71.3 155.1 73.4 158 75.5 161C125.5 232.9 139.4 348 125.6 435C116.7 491 87.4 542 48.2 586" stroke="#317EFE" strokeWidth="2" strokeMiterlimit="10" />
+          <path d="M8.77 11.7C11.6 13.6 14.4 15.5 17.1 17.5C158 121 224 393 106 586" stroke="#317EFE" strokeWidth="2" strokeMiterlimit="10" />
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+/* Forme décorative droite */
+function HeroRightShape() {
+  return (
+    <div className="absolute right-0 top-1/3 hidden w-24 opacity-40 lg:block" aria-hidden>
+      <svg width="138" height="320" viewBox="0 0 138 481" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-auto w-full">
+        <path d="M130.6 471C128.3 469.6 126 468 123.7 466.3C8.27 381.3 -45.5 158 50.7 0" stroke="#317EFE" strokeWidth="2" strokeMiterlimit="10" />
+      </svg>
+    </div>
+  );
+}
+
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-[hsl(var(--border))] bg-white">
-      <div className="container mx-auto px-4 py-16 md:py-20">
+    <section className="relative min-h-[90vh] overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-[#A0D7FE] to-[#F6FBFF]">
+      <HeroLeftShape />
+      <HeroRightShape />
+
+      <div className="container relative mx-auto px-4 py-16 md:py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+          <div className="relative z-10">
+            <span className="te-section-short-title animate-te-fade-in" style={{ animationDelay: "0.1s" }}>Solution pro</span>
+            <h1 className="te-section-title-lg mt-4 animate-te-fade-up" style={{ animationDelay: "0.2s" }}>
               Gagnez{" "}
               <span className="text-[hsl(var(--accent))]">5 à 10 heures</span>{" "}
               par semaine sur votre gestion.
             </h1>
-            <p className="mt-4 text-lg text-[hsl(var(--muted-foreground))] max-w-xl">
+            <p className="mt-5 max-w-xl text-lg text-[hsl(var(--te-body))] animate-te-fade-up" style={{ animationDelay: "0.3s" }}>
               Un outil conçu pour les artisans qui veulent rester concentrés sur leur métier, pas sur la paperasse.
             </p>
             <ul className="mt-6 space-y-3">
-              {benefits.map((item) => (
-                <li key={item} className="flex items-center gap-2 text-[hsl(var(--foreground))]">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[hsl(var(--accent))]/10 text-[hsl(var(--accent))]">
+              {benefits.map((item, i) => (
+                <li
+                  key={item}
+                  className="flex items-center gap-2 text-[hsl(var(--te-body))] animate-te-fade-up"
+                  style={{ animationDelay: `${0.35 + i * 0.05}s` }}
+                >
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--accent))]/20 text-[hsl(var(--accent))]">
                     <Check className="h-3 w-3" />
                   </span>
                   {item}
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button size="lg" asChild>
-                <Link href="/contact">Demander une démo</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/contact#demo">Voir une démo</Link>
-              </Button>
+            <div className="mt-8 flex flex-wrap items-center gap-4 animate-te-fade-up" style={{ animationDelay: "0.6s" }}>
+              <Link href="/contact" className="te-theme-btn">
+                Demander une démo <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a
+                href="tel:+3369430343"
+                className="flex items-center gap-4 rounded-full border-4 border-[#E7F914] bg-white p-3 text-[hsl(var(--te-dark))] shadow-lg transition hover:scale-105 hover:shadow-xl animate-te-ripple"
+              >
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--accent))]/10 text-[hsl(var(--accent))]">
+                  <Phone className="h-5 w-5" />
+                </span>
+                <span className="flex flex-col text-left">
+                  <span className="text-xs font-normal text-[hsl(var(--te-body))]">Besoin d&apos;aide ?</span>
+                  <span className="text-base font-semibold">07 69 43 03 43</span>
+                </span>
+              </a>
             </div>
-            <p className="mt-4 text-sm text-[hsl(var(--muted-foreground))]">
+            <p className="mt-6 text-sm text-[hsl(var(--te-body))]/80" style={{ animationDelay: "0.7s" }}>
               Démonstration gratuite • Sans engagement • Réponse sous 24h
             </p>
-            <p className="mt-1 text-sm text-[hsl(var(--muted-foreground))]">
+            <p className="mt-1 text-sm text-[hsl(var(--te-body))]/80">
               Données hébergées en France • Support humain
             </p>
           </div>
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-md overflow-hidden rounded-lg border border-[hsl(var(--border))] shadow-lg">
-              <Image
-                src="/hero-aos-renov.png"
-                alt="Aos Renov - Construire pour durer - Application de gestion chantiers, devis et équipes"
-                width={800}
-                height={500}
-                className="w-full object-cover"
-                priority
-              />
+
+          <div className="relative z-10 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-lg">
+              {/* Badge flottant type template */}
+              <div className="absolute -left-4 top-8 z-20 flex items-center gap-3 rounded-2xl border-2 border-white/80 bg-white/95 px-4 py-3 shadow-xl backdrop-blur animate-te-float lg:-left-6">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--accent))]/20 text-[hsl(var(--accent))] font-bold">A</span>
+                <span className="text-sm font-semibold text-[hsl(var(--te-dark))]">Construire pour durer</span>
+              </div>
+              {/* Image dans forme à biseau */}
+              <div className="te-hero-shape-blob relative overflow-hidden rounded-2xl bg-white/20 shadow-2xl">
+                <div className="aspect-[4/3] w-full overflow-hidden">
+                  <Image
+                    src="/hero-aos-renov.png"
+                    alt="Aos Renov - Construire pour durer - Application de gestion chantiers, devis et équipes"
+                    width={800}
+                    height={600}
+                    className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

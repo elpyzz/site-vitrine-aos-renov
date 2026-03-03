@@ -49,11 +49,13 @@ export function CtaSection() {
 
   return (
     <>
-      <section id="contact" className="scroll-mt-20 border-b border-[hsl(var(--border))] bg-white py-20 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-2xl rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-6 shadow-sm md:p-8">
-            <h2 className="text-2xl font-bold">Prêt à simplifier votre gestion ?</h2>
-            <p className="mt-2 text-[hsl(var(--muted-foreground))]">
+      <section id="contact" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-[#F6FBFF] via-[#eef6fc] to-white py-20 md:py-24">
+        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-[hsl(var(--accent))]/8 blur-3xl" aria-hidden />
+        <div className="container relative mx-auto px-4">
+          <div className="animate-te-fade-up mx-auto max-w-2xl rounded-2xl border border-[hsl(var(--accent))]/15 bg-white p-6 shadow-[0px_0px_60px_0px_rgba(0,0,0,0.08)] md:p-8" style={{ animationDelay: "0.1s" }}>
+            <span className="te-section-short-title">Contact</span>
+            <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">Prêt à simplifier votre gestion ?</h2>
+            <p className="mt-3 text-lg text-[hsl(var(--te-body))]">
               On vous rappelle pour comprendre votre activité et vous montrer comment gagner du temps dès cette semaine.
             </p>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
@@ -111,7 +113,7 @@ export function CtaSection() {
                 )}
               </div>
               <div className="pt-2">
-                <Button type="submit" disabled={loading} className="w-full sm:w-auto">
+                <Button type="submit" disabled={loading} className="te-theme-btn w-full sm:w-auto">
                   {loading ? "Envoi…" : "Être rappelé gratuitement"}
                 </Button>
                 <p className="mt-3 text-sm text-[hsl(var(--muted-foreground))]">

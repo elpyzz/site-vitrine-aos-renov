@@ -1,4 +1,5 @@
 import { ClipboardList, Rocket, Headphones } from "lucide-react";
+import { SectionWaveToWhite } from "./SectionWave";
 
 const steps = [
   {
@@ -18,29 +19,54 @@ const steps = [
   },
 ];
 
+function StepShape() {
+  return (
+    <div className="absolute -right-2 -top-2 h-20 w-20 opacity-20" aria-hidden>
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full text-[hsl(var(--accent))]">
+        <circle cx="40" cy="40" r="38" stroke="currentColor" strokeWidth="2" />
+        <circle cx="40" cy="40" r="30" stroke="currentColor" strokeWidth="1" />
+      </svg>
+    </div>
+  );
+}
+
 export function HowItWorks() {
   return (
-    <section id="comment-ca-marche" className="scroll-mt-20 border-b border-[hsl(var(--border))] bg-[#f5f7fa] py-20 md:py-24">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold sm:text-3xl">Démarrez en moins de 10 minutes</h2>
-        <p className="mt-2 max-w-2xl text-[hsl(var(--muted-foreground))]">
-          Simple, rapide, sans prise de tête.
-        </p>
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+    <section id="comment-ca-marche" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-[#f5f7fa] to-[#eef4f9] py-20 md:py-24">
+      <div className="absolute left-0 top-1/3 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl" aria-hidden />
+      <div className="absolute bottom-1/4 right-0 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl" aria-hidden />
+
+      <div className="container relative mx-auto px-4">
+        <div className="mb-14 text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
+          <span className="te-section-short-title mx-auto">Processus</span>
+          <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">
+            Démarrez en moins de 10 minutes
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-lg text-[hsl(var(--te-body))]">
+            Simple, rapide, sans prise de tête.
+          </p>
+        </div>
+        <div className="grid gap-8 md:grid-cols-3">
           {steps.map(({ icon: Icon, title, description }, index) => (
             <div key={title} className="relative">
               {index < steps.length - 1 && (
-                <div className="absolute left-6 top-12 hidden h-0.5 w-[calc(100%-3rem)] bg-[hsl(var(--border))] md:block" aria-hidden />
+                <div className="absolute left-1/2 top-16 hidden h-0.5 w-full max-w-[80%] -translate-x-1/2 bg-[hsl(var(--border))] md:block" aria-hidden />
               )}
-              <div className="flex flex-col items-center text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[hsl(var(--accent))] bg-[hsl(var(--background))] text-[hsl(var(--accent))] font-semibold">
-                  {index + 1}
+              <div
+                className="te-card-hover animate-te-fade-up relative flex flex-col items-center rounded-2xl border border-[hsl(var(--border))] bg-white p-8 text-center shadow-[0px_0px_40px_0px_rgba(0,0,0,0.06)] transition-all duration-300 hover:border-[hsl(var(--accent))]/20 hover:shadow-xl"
+                style={{ animationDelay: `${0.1 + index * 0.08}s` }}
+              >
+                <div className="relative mb-4 flex items-center justify-center">
+                  <StepShape />
+                  <span className="te-step-number relative z-10 font-bold tabular-nums">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
-                <div className="mt-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(var(--accent))]/10 text-[hsl(var(--accent))]">
-                  <Icon className="h-5 w-5" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[hsl(var(--accent))]/10 text-[hsl(var(--accent))]">
+                  <Icon className="h-7 w-7" />
                 </div>
-                <h3 className="mt-3 font-semibold">{title}</h3>
-                <p className="mt-1 text-sm text-[hsl(var(--muted-foreground))]">
+                <h3 className="mt-5 text-lg font-medium text-[hsl(var(--te-dark))]">{title}</h3>
+                <p className="mt-2 text-[hsl(var(--te-body))]">
                   {description}
                 </p>
               </div>
@@ -48,6 +74,7 @@ export function HowItWorks() {
           ))}
         </div>
       </div>
+      <SectionWaveToWhite />
     </section>
   );
 }

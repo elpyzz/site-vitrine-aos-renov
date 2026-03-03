@@ -26,17 +26,22 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section className="border-b border-[hsl(var(--border))] bg-[#f5f7fa] py-20 md:py-24">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold sm:text-3xl">Tarifs</h2>
-        <p className="mt-2 max-w-2xl text-[hsl(var(--muted-foreground))]">
+    <section className="relative overflow-hidden border-b border-[hsl(var(--border))] bg-[#f5f7fa] py-20 md:py-24">
+      <div className="absolute right-0 top-1/4 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/6 blur-3xl" aria-hidden />
+      <div className="container relative mx-auto px-4">
+        <div className="animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
+          <span className="te-section-short-title">Offres</span>
+          <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">Tarifs</h2>
+        </div>
+        <p className="mt-3 max-w-2xl animate-te-fade-up text-[hsl(var(--te-body))]" style={{ animationDelay: "0.1s" }}>
           Pas d'engagement. Pas de surprise. Une offre adaptée à votre activité.
         </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
-          {plans.map((plan) => (
+        <div className="mx-auto mt-10 grid max-w-4xl gap-6 md:grid-cols-2">
+          {plans.map((plan, i) => (
             <Card
               key={plan.name}
-              className={plan.highlighted ? "border-[hsl(var(--accent))] shadow-md bg-blue-50/60" : ""}
+              className={`animate-te-fade-up transition-all duration-300 hover:shadow-lg ${plan.highlighted ? "border-[hsl(var(--accent))] bg-[#F6FBFF]/80 shadow-lg" : ""}`}
+              style={{ animationDelay: `${0.15 + i * 0.08}s` }}
             >
               {plan.highlighted && (
                 <div className="rounded-t-lg bg-[hsl(var(--accent))] px-4 py-1.5 text-center text-sm font-medium text-white">

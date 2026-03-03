@@ -10,47 +10,84 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-[hsl(var(--border))] bg-[hsl(var(--muted))]/30">
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <div>
-            <Link href="/" className="font-semibold text-lg text-[hsl(var(--accent))]">
-              Aos Renov
-            </Link>
-            <p className="mt-2 max-w-xs text-sm text-[hsl(var(--muted-foreground))]">
-              Devis, factures et planning pour artisans — simple et rapide.
-            </p>
-          </div>
-          <div className="flex flex-col gap-4">
-            <span className="text-sm font-medium text-[hsl(var(--foreground))]">
-              Légal
-            </span>
-            <ul className="flex flex-col gap-2">
-              {legalLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors"
-                  >
-                    {link.label}
+    <footer className="relative overflow-hidden bg-[#14203A] text-white">
+      <div className="container mx-auto px-4 py-16">
+        {/* Bloc logo + description + colonnes type template */}
+        <div className="te-footer-sec">
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <div className="te-footer-widget animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
+                <Link href="/" className="te-footer-logo text-xl font-semibold text-white">
+                  Aos Renov
+                </Link>
+                <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
+                  Devis, factures et planning pour artisans — simple et rapide.
+                </p>
+              </div>
+            </div>
+            <div className="lg:col-span-4">
+              <div className="te-footer-widget animate-te-fade-up" style={{ animationDelay: "0.1s" }}>
+                <h2 className="te-footer-widget-title text-sm font-semibold uppercase tracking-wider text-white/90">
+                  Légal
+                </h2>
+                <ul className="mt-4 flex flex-col gap-2">
+                  {legalLinks.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-white/70 transition-colors hover:text-[#317EFE]"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="lg:col-span-4">
+              <div className="te-footer-widget animate-te-fade-up" style={{ animationDelay: "0.15s" }}>
+                <h2 className="te-footer-widget-title text-sm font-semibold uppercase tracking-wider text-white/90">
+                  Contact
+                </h2>
+                <p className="mt-4 text-sm text-white/70">
+                  <Link href="/contact" className="transition-colors hover:text-[#317EFE]">
+                    Formulaire de contact
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="flex flex-col gap-4">
-            <span className="text-sm font-medium text-[hsl(var(--foreground))]">
-              Contact
-            </span>
-            <p className="text-sm text-[hsl(var(--muted-foreground))]">
-              <Link href="/contact" className="hover:text-[hsl(var(--foreground))] transition-colors">
-                Formulaire de contact
-              </Link>
-            </p>
+                </p>
+                <p className="mt-2 text-sm text-white/70">
+                  <a href="tel:+3369430343" className="transition-colors hover:text-[#317EFE]">
+                    07 69 43 03 43
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-[hsl(var(--border))] text-center text-sm text-[hsl(var(--muted-foreground))]">
-          © {new Date().getFullYear()} Aos Renov. Tous droits réservés.
+        <div className="footer-bottom-area mt-12 border-t border-white/10 pt-8">
+          <div className="te-footer-bottom-wrapper flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <div className="te-copyright-text text-center text-sm text-white/60 sm:text-left">
+              © {new Date().getFullYear()} Aos Renov. Tous droits réservés.
+            </div>
+            <div className="te-footer-bottom-menu">
+              <ul className="flex flex-wrap justify-center gap-6 text-sm">
+                <li>
+                  <Link href="/mentions-legales" className="text-white/60 transition-colors hover:text-[#317EFE]">
+                    Mentions légales
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/confidentialite" className="text-white/60 transition-colors hover:text-[#317EFE]">
+                    Confidentialité
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-white/60 transition-colors hover:text-[#317EFE]">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -19,9 +19,9 @@ const trades: { label: string; icon: LucideIcon }[] = [
 
 export function TrustedByLogos() {
   return (
-    <section className="border-b border-[hsl(var(--border))] bg-white py-20 md:py-24">
+    <section className="relative border-b border-[hsl(var(--border))] bg-[#FAFCFF] py-16 md:py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-xl font-semibold sm:text-2xl">
+        <h2 className="animate-te-fade-up text-center text-xl font-semibold sm:text-2xl" style={{ animationDelay: "0.05s" }}>
           Pensé pour les artisans
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-center text-sm text-[hsl(var(--muted-foreground))]">

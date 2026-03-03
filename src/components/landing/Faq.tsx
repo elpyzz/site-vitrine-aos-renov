@@ -5,7 +5,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
 
 const faqItems = [
   {
@@ -48,13 +47,17 @@ const faqItems = [
 
 export function Faq() {
   return (
-    <section id="faq" className="scroll-mt-20 border-b border-[hsl(var(--border))] bg-white py-20 md:py-24">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold sm:text-3xl text-center">FAQ</h2>
-        <p className="mt-2 max-w-2xl mx-auto text-center text-[hsl(var(--muted-foreground))]">
-          Réponses aux questions les plus fréquentes.
-        </p>
-        <Accordion type="single" collapsible className="mt-10 max-w-3xl mx-auto">
+    <section id="faq" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-white to-[#F6FBFF]/50 py-20 md:py-24">
+      <div className="absolute left-1/2 top-0 h-px w-full max-w-2xl -translate-x-1/2 bg-gradient-to-r from-transparent via-[hsl(var(--accent))]/30 to-transparent" aria-hidden />
+      <div className="container relative mx-auto px-4">
+        <div className="text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
+          <span className="te-section-short-title mx-auto">Questions</span>
+          <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">FAQ</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-lg text-[hsl(var(--te-body))]">
+            Réponses aux questions les plus fréquentes.
+          </p>
+        </div>
+        <Accordion type="single" collapsible className="mx-auto mt-10 max-w-3xl animate-te-fade-up" style={{ animationDelay: "0.1s" }}>
           {faqItems.map(({ q, a }) => (
             <AccordionItem key={q} value={q}>
               <AccordionTrigger>{q}</AccordionTrigger>
@@ -62,13 +65,13 @@ export function Faq() {
             </AccordionItem>
           ))}
         </Accordion>
-        <div className="mt-10 max-w-3xl mx-auto rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--muted))]/30 p-6 text-center">
-          <p className="text-[hsl(var(--foreground))] font-medium">
+        <div className="mx-auto mt-10 max-w-3xl animate-te-fade-up rounded-xl border border-[hsl(var(--accent))]/20 bg-white/80 p-6 text-center shadow-sm" style={{ animationDelay: "0.15s" }}>
+          <p className="text-[hsl(var(--te-dark))] font-medium">
             Une question spécifique ? Demandez une démo, on vous répond en direct.
           </p>
-          <Button asChild className="mt-4">
-            <Link href="/contact">Demander une démo</Link>
-          </Button>
+          <Link href="/contact" className="te-theme-btn mt-4 inline-flex">
+            Demander une démo
+          </Link>
         </div>
       </div>
     </section>

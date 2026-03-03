@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] hover:opacity-90 focus-visible:ring-[hsl(var(--ring))]",
+          "rounded-full bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] hover:bg-[#E7F914] hover:text-[#14203A] focus-visible:ring-[hsl(var(--ring))]",
         secondary:
           "bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] hover:bg-[hsl(var(--muted))]/80 focus-visible:ring-[hsl(var(--ring))]",
         outline:
