@@ -19,10 +19,11 @@ const after = [
 
 export function ProblemSolution() {
   return (
-    <section className="relative overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-[#F6FBFF] to-[#eef4f9] py-20 md:py-24">
+    <section className="relative overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
+      <div className="te-bg-animated-light" aria-hidden />
       {/* Forme décorative discrète en arrière-plan */}
-      <div className="absolute right-0 top-1/4 h-72 w-72 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl" aria-hidden />
-      <div className="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl" aria-hidden />
+      <div className="absolute right-0 top-1/4 h-72 w-72 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "1s" }} />
+      <div className="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "3.5s" }} />
 
       <div className="container relative mx-auto px-4">
         <div className="mb-12 text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>

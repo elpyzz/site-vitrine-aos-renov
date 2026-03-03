@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Hammer } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -24,6 +24,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-[hsl(var(--border))] bg-white/95 shadow-sm backdrop-blur">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2 text-xl font-semibold text-[hsl(var(--te-dark))]">
+          <Hammer className="h-6 w-6 shrink-0 text-[hsl(var(--accent))] animate-te-wiggle" aria-hidden />
           <span className="text-[hsl(var(--accent))]">Aos Renov</span>
         </Link>
 

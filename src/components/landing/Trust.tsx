@@ -21,8 +21,9 @@ const trustItems = [
 
 export function Trust() {
   return (
-    <section className="relative overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-[#F6FBFF]/40 to-white py-20 md:py-24">
-      <div className="absolute left-0 bottom-1/4 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl" aria-hidden />
+    <section className="relative overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
+      <div className="te-bg-animated-light" aria-hidden />
+      <div className="absolute left-0 bottom-1/4 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "1.5s" }} />
       <div className="container relative mx-auto px-4">
         <div className="text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
           <span className="te-section-short-title mx-auto">Confiance</span>

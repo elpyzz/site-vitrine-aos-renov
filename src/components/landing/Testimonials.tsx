@@ -29,8 +29,9 @@ const whyBullets = [
 
 export function Testimonials() {
   return (
-    <section id="avis" className="relative scroll-mt-20 border-b border-[hsl(var(--border))] bg-[#FAFCFF] py-20 md:py-24">
-      <div className="container mx-auto px-4">
+    <section id="avis" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
+      <div className="te-bg-animated-white-tint" aria-hidden />
+      <div className="container relative mx-auto px-4">
         <div className="animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
           <span className="te-section-short-title">Avis</span>
           <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">Avis d’artisans</h2>

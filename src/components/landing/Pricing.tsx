@@ -26,8 +26,9 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section className="relative overflow-hidden border-b border-[hsl(var(--border))] bg-[#f5f7fa] py-20 md:py-24">
-      <div className="absolute right-0 top-1/4 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/6 blur-3xl" aria-hidden />
+    <section className="relative overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
+      <div className="te-bg-animated-light" aria-hidden />
+      <div className="absolute right-0 top-1/4 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/6 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "0.5s" }} />
       <div className="container relative mx-auto px-4">
         <div className="animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
           <span className="te-section-short-title">Offres</span>

@@ -70,20 +70,63 @@
   }
 }
 
+/* Animations continues (sans hover) — désactivées si prefers-reduced-motion */
+@keyframes te-pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.02); }
+}
+@keyframes te-float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes te-glow-soft {
+  0%, 100% { box-shadow: 0 4px 20px rgba(49, 126, 254, 0.2); }
+  50% { box-shadow: 0 4px 28px rgba(49, 126, 254, 0.35); }
+}
+@keyframes te-wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+/* Fonds animés (dégradé qui bouge) */
+@keyframes te-bg-gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes te-bg-shimmer {
+  0% { transform: translateX(-100%) skewX(-12deg); }
+  100% { transform: translateX(200%) skewX(-12deg); }
+}
+
 .animate-te-fade-up {
   animation: te-fade-up 0.6s ease-out forwards;
 }
 .animate-te-fade-in {
   animation: te-fade-in 0.5s ease-out forwards;
 }
-.animate-te-ripple {
-  animation: te-ripple 2s ease-in-out infinite;
-}
-.animate-te-float {
-  animation: te-float 4s ease-in-out infinite;
-}
 .animate-te-scale-in {
   animation: te-scale-in 0.4s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-te-ripple {
+    animation: te-ripple 2s ease-in-out infinite;
+  }
+  .animate-te-float {
+    animation: te-float 4s ease-in-out infinite;
+  }
+  .animate-te-pulse-soft {
+    animation: te-pulse-soft 2.5s ease-in-out infinite;
+  }
+  .animate-te-float-slow {
+    animation: te-float-slow 5s ease-in-out infinite;
+  }
+  .animate-te-glow-soft {
+    animation: te-glow-soft 2s ease-in-out infinite;
+  }
+  .animate-te-wiggle {
+    animation: te-wiggle 3s ease-in-out infinite;
+  }
 }
 
 @layer components {
@@ -131,6 +174,58 @@
   }
   .te-hero-shape-blob {
     clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+  }
+  /* Fonds animés (dégradé qui bouge) — calque en arrière-plan (z-0 pour éviter stacking derrière la page) */
+  .te-bg-animated-hero,
+  .te-bg-animated-cta,
+  .te-bg-animated-light,
+  .te-bg-animated-light-alt,
+  .te-bg-animated-white-tint,
+  .te-bg-animated-footer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .te-bg-animated-hero {
+    background: linear-gradient(120deg, #A0D7FE 0%, #b8e0fe 25%, #F6FBFF 50%, #b8e0fe 75%, #A0D7FE 100%);
+    background-size: 200% 200%;
+  }
+  .te-bg-animated-cta {
+    background: linear-gradient(120deg, #F6FBFF 0%, #e8f4fc 25%, #eef6fc 50%, #e8f4fc 75%, #F6FBFF 100%);
+    background-size: 200% 200%;
+  }
+  .te-bg-animated-light {
+    background: linear-gradient(120deg, #F6FBFF 0%, #eef4f9 25%, #f5f7fa 50%, #eef4f9 75%, #F6FBFF 100%);
+    background-size: 200% 200%;
+  }
+  .te-bg-animated-light-alt {
+    background: linear-gradient(120deg, #f5f7fa 0%, #eef4f9 25%, #F6FBFF 50%, #eef4f9 75%, #f5f7fa 100%);
+    background-size: 200% 200%;
+  }
+  .te-bg-animated-white-tint {
+    background: linear-gradient(120deg, #FAFCFF 0%, #F6FBFF 25%, #fff 50%, #F6FBFF 75%, #FAFCFF 100%);
+    background-size: 200% 200%;
+  }
+  .te-bg-animated-footer {
+    background: linear-gradient(135deg, #14203A 0%, #1a2a4a 25%, #14203A 50%, #1e3354 75%, #14203A 100%);
+    background-size: 200% 200%;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .te-bg-animated-hero {
+      animation: te-bg-gradient-shift 14s ease infinite;
+    }
+    .te-bg-animated-cta {
+      animation: te-bg-gradient-shift 16s ease infinite;
+    }
+    .te-bg-animated-light,
+    .te-bg-animated-light-alt,
+    .te-bg-animated-white-tint {
+      animation: te-bg-gradient-shift 18s ease infinite;
+    }
+    .te-bg-animated-footer {
+      animation: te-bg-gradient-shift 20s ease infinite;
+    }
   }
   /* Feature card variants (te-info-card style) */
   .te-feature-card-variant-accent .te-feature-icon-wrap { background: rgba(49, 126, 254, 0.12); color: #317EFE; border-color: rgba(49, 126, 254, 0.25); }

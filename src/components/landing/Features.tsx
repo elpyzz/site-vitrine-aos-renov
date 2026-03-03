@@ -47,10 +47,11 @@ const variants = ["te-feature-card-variant-accent", "te-feature-card-variant-sky
 
 export function Features() {
   return (
-    <section id="fonctionnalites" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] bg-[#F6FBFF]/50 py-20 md:py-24">
+    <section id="fonctionnalites" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
+      <div className="te-bg-animated-light" aria-hidden />
       {/* Forme décorative en coin */}
-      <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[hsl(var(--accent))]/8 blur-3xl" aria-hidden />
-      <div className="absolute -left-20 bottom-1/4 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/6 blur-3xl" aria-hidden />
+      <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[hsl(var(--accent))]/8 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "0s" }} />
+      <div className="absolute -left-20 bottom-1/4 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/6 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "2s" }} />
 
       <div className="container relative mx-auto px-4">
         <div className="mb-14 text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>

@@ -47,7 +47,8 @@ const faqItems = [
 
 export function Faq() {
   return (
-    <section id="faq" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-white to-[#F6FBFF]/50 py-20 md:py-24">
+    <section id="faq" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
+      <div className="te-bg-animated-white-tint" aria-hidden />
       <div className="absolute left-1/2 top-0 h-px w-full max-w-2xl -translate-x-1/2 bg-gradient-to-r from-transparent via-[hsl(var(--accent))]/30 to-transparent" aria-hidden />
       <div className="container relative mx-auto px-4">
         <div className="text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>

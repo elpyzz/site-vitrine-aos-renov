@@ -70,9 +70,10 @@ export function AppScreenshots() {
   return (
     <section
       id="app-en-images"
-      className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-[#f5f7fa] to-[#F6FBFF] py-20 md:py-24"
+      className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24"
     >
-      <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[hsl(var(--accent))]/6 blur-3xl" aria-hidden />
+      <div className="te-bg-animated-light-alt" aria-hidden />
+      <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[hsl(var(--accent))]/6 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "2s" }} />
       <div className="container relative mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
           <span className="te-section-short-title mx-auto">Découverte</span>

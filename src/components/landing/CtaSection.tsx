@@ -49,8 +49,9 @@ export function CtaSection() {
 
   return (
     <>
-      <section id="contact" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-[#F6FBFF] via-[#eef6fc] to-white py-20 md:py-24">
-        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-[hsl(var(--accent))]/8 blur-3xl" aria-hidden />
+      <section id="contact" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
+        <div className="te-bg-animated-cta" aria-hidden />
+        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-[hsl(var(--accent))]/8 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "1s" }} />
         <div className="container relative mx-auto px-4">
           <div className="animate-te-fade-up mx-auto max-w-2xl rounded-2xl border border-[hsl(var(--accent))]/15 bg-white p-6 shadow-[0px_0px_60px_0px_rgba(0,0,0,0.08)] md:p-8" style={{ animationDelay: "0.1s" }}>
             <span className="te-section-short-title">Contact</span>
@@ -113,7 +114,7 @@ export function CtaSection() {
                 )}
               </div>
               <div className="pt-2">
-                <Button type="submit" disabled={loading} className="te-theme-btn w-full sm:w-auto">
+                <Button type="submit" disabled={loading} className="te-theme-btn w-full sm:w-auto animate-te-glow-soft">
                   {loading ? "Envoi…" : "Être rappelé gratuitement"}
                 </Button>
                 <p className="mt-3 text-sm text-[hsl(var(--muted-foreground))]">

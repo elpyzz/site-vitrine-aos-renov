@@ -16,7 +16,7 @@ const benefits = [
 /* Formes décoratives type template (gauche) */
 function HeroLeftShape() {
   return (
-    <div className="absolute left-0 top-1/4 hidden w-32 opacity-40 lg:block" aria-hidden>
+    <div className="absolute left-0 top-1/4 hidden w-32 opacity-40 animate-te-float-slow lg:block" aria-hidden style={{ animationDelay: "0s" }}>
       <svg width="168" height="320" viewBox="0 0 168 587" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-auto w-full">
         <g opacity="0.6">
           <path d="M69.1 152.3C71.3 155.1 73.4 158 75.5 161C125.5 232.9 139.4 348 125.6 435C116.7 491 87.4 542 48.2 586" stroke="#317EFE" strokeWidth="2" strokeMiterlimit="10" />
@@ -30,7 +30,7 @@ function HeroLeftShape() {
 /* Forme décorative droite */
 function HeroRightShape() {
   return (
-    <div className="absolute right-0 top-1/3 hidden w-24 opacity-40 lg:block" aria-hidden>
+    <div className="absolute right-0 top-1/3 hidden w-24 opacity-40 animate-te-float-slow lg:block" aria-hidden style={{ animationDelay: "2.5s" }}>
       <svg width="138" height="320" viewBox="0 0 138 481" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-auto w-full">
         <path d="M130.6 471C128.3 469.6 126 468 123.7 466.3C8.27 381.3 -45.5 158 50.7 0" stroke="#317EFE" strokeWidth="2" strokeMiterlimit="10" />
       </svg>
@@ -41,7 +41,8 @@ function HeroRightShape() {
 export function Hero() {
   const [heroLightboxOpen, setHeroLightboxOpen] = useState(false);
   return (
-    <section className="relative min-h-[90vh] overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-[#A0D7FE] to-[#F6FBFF]">
+    <section className="relative min-h-[90vh] overflow-hidden border-b border-[hsl(var(--border))]">
+      <div className="te-bg-animated-hero" aria-hidden />
       <HeroLeftShape />
       <HeroRightShape />
 
@@ -72,7 +73,7 @@ export function Hero() {
               ))}
             </ul>
             <div className="mt-8 flex flex-wrap items-center gap-4 animate-te-fade-up" style={{ animationDelay: "0.6s" }}>
-              <Link href="/contact" className="te-theme-btn">
+              <Link href="/contact" className="te-theme-btn animate-te-glow-soft">
                 Demander une démo <ArrowRight className="h-4 w-4" />
               </Link>
               <a

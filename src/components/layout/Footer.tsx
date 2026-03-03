@@ -10,8 +10,9 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#14203A] text-white">
-      <div className="container mx-auto px-4 py-16">
+    <footer className="relative overflow-hidden text-white">
+      <div className="te-bg-animated-footer" aria-hidden />
+      <div className="container relative mx-auto px-4 py-16">
         {/* Bloc logo + description + colonnes type template */}
         <div className="te-footer-sec">
           <div className="grid gap-12 lg:grid-cols-12">

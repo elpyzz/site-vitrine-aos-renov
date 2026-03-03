@@ -21,9 +21,10 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="comment-ca-marche" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-[#f5f7fa] to-[#eef4f9] py-20 md:py-24">
-      <div className="absolute left-0 top-1/3 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl" aria-hidden />
-      <div className="absolute bottom-1/4 right-0 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl" aria-hidden />
+    <section id="comment-ca-marche" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
+      <div className="te-bg-animated-light-alt" aria-hidden />
+      <div className="absolute left-0 top-1/3 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "0s" }} />
+      <div className="absolute bottom-1/4 right-0 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "3s" }} />
 
       <div className="container relative mx-auto px-4">
         <div className="mb-14 text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>

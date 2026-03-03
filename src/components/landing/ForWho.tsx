@@ -10,8 +10,9 @@ export function ForWho() {
   const artisanImage = "/artisan-tablette.png";
 
   return (
-    <section id="pour-qui" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] bg-[#F6FBFF]/40 py-20 md:py-24">
-      <div className="absolute -left-32 top-1/4 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/8 blur-3xl" aria-hidden />
+    <section id="pour-qui" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
+      <div className="te-bg-animated-light" aria-hidden />
+      <div className="absolute -left-32 top-1/4 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/8 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "1.5s" }} />
       <div className="container relative mx-auto px-4">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
           <div className="animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
