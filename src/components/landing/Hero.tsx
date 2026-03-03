@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Check, Phone, ArrowRight } from "lucide-react";
+import { Check, Phone, ArrowRight, ZoomIn } from "lucide-react";
+import { ImageLightbox } from "@/components/ui/image-lightbox";
 
 const benefits = [
   "Transformez un devis en facture en 1 clic",
@@ -37,6 +39,7 @@ function HeroRightShape() {
 }
 
 export function Hero() {
+  const [heroLightboxOpen, setHeroLightboxOpen] = useState(false);
   return (
     <section className="relative min-h-[90vh] overflow-hidden border-b border-[hsl(var(--border))] bg-gradient-to-b from-[#A0D7FE] to-[#F6FBFF]">
       <HeroLeftShape />
@@ -100,18 +103,34 @@ export function Hero() {
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--accent))]/20 text-[hsl(var(--accent))] font-bold">A</span>
                 <span className="text-sm font-semibold text-[hsl(var(--te-dark))]">Construire pour durer</span>
               </div>
-              {/* Image dans forme à biseau */}
+              {/* Image dans forme à biseau — clic pour agrandir */}
               <div className="te-hero-shape-blob relative overflow-hidden rounded-2xl bg-white/20 shadow-2xl">
-                <div className="aspect-[4/3] w-full overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setHeroLightboxOpen(true)}
+                  className="block aspect-[4/3] w-full overflow-hidden focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))] focus:ring-offset-2 rounded-2xl"
+                >
                   <Image
                     src="/hero-aos-renov.png"
                     alt="Aos Renov - Construire pour durer - Application de gestion chantiers, devis et équipes"
-                    width={800}
-                    height={600}
+                    width={1600}
+                    height={1200}
                     className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    quality={100}
                     priority
+                    unoptimized
                   />
-                </div>
+                  <span className="absolute right-4 bottom-4 flex items-center gap-2 rounded-full bg-black/50 px-3 py-2 text-sm text-white" aria-hidden>
+                    <ZoomIn className="h-4 w-4" /> Agrandir
+                  </span>
+                </button>
+                <ImageLightbox
+                  open={heroLightboxOpen}
+                  onOpenChange={setHeroLightboxOpen}
+                  src="/hero-aos-renov.png"
+                  alt="Aos Renov - Construire pour durer"
+                />
               </div>
             </div>
           </div>

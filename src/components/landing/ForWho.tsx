@@ -1,7 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import { Target } from "lucide-react";
+import { Target, ZoomIn } from "lucide-react";
+import { ImageLightbox } from "@/components/ui/image-lightbox";
 
 export function ForWho() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const artisanImage = "/artisan-tablette.png";
+
   return (
     <section id="pour-qui" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] bg-[#F6FBFF]/40 py-20 md:py-24">
       <div className="absolute -left-32 top-1/4 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/8 blur-3xl" aria-hidden />
@@ -18,21 +25,24 @@ export function ForWho() {
             </p>
           </div>
           <div className="relative flex justify-center lg:justify-end animate-te-fade-up" style={{ animationDelay: "0.15s" }}>
-            {/* Élément décoratif type template */}
             <div className="absolute -bottom-4 -right-4 z-0 h-24 w-24 rounded-full bg-[hsl(var(--accent))]/10 blur-xl" aria-hidden />
             <div className="relative z-10 w-full max-w-md">
-              <div className="relative overflow-hidden rounded-2xl border border-[hsl(var(--border))] shadow-xl">
+              <button
+                type="button"
+                onClick={() => setLightboxOpen(true)}
+                className="relative block w-full overflow-hidden rounded-2xl border border-[hsl(var(--border))] shadow-xl transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))] focus:ring-offset-2"
+              >
                 <Image
-                  src="/artisan-tablette.png"
+                  src={artisanImage}
                   alt="Artisan sur chantier utilisant une tablette pour gérer son activité"
-                  width={600}
-                  height={400}
-                  className="w-full object-cover transition-transform duration-500 hover:scale-105"
+                  width={1000}
+                  height={667}
+                  className="w-full object-cover object-top"
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  quality={90}
+                  quality={100}
+                  unoptimized
                 />
-                {/* Carte flottante overlay */}
-                <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/80 bg-white/95 p-4 shadow-xl backdrop-blur sm:right-auto sm:max-w-[220px] animate-te-fade-up" style={{ animationDelay: "0.2s" }}>
+                <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/80 bg-white/95 p-4 shadow-xl backdrop-blur sm:right-auto sm:max-w-[220px]">
                   <div className="flex items-center gap-3">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--accent))]/20 text-[hsl(var(--accent))]">
                       <Target className="h-5 w-5" />
@@ -43,7 +53,17 @@ export function ForWho() {
                     </div>
                   </div>
                 </div>
-              </div>
+                <span className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white" aria-hidden>
+                  <ZoomIn className="h-5 w-5" />
+                </span>
+              </button>
+              <p className="mt-2 text-center text-xs text-[hsl(var(--te-body))]">Cliquez pour agrandir</p>
+              <ImageLightbox
+                open={lightboxOpen}
+                onOpenChange={setLightboxOpen}
+                src={artisanImage}
+                alt="Artisan sur chantier — Aos Renov"
+              />
             </div>
           </div>
         </div>

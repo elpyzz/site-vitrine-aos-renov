@@ -47,8 +47,9 @@ export function ProblemSolution() {
             </div>
             <ul className="mt-5 space-y-3 text-sm text-red-900/90">
               {before.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" /> {item}
+                <li key={item} className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" aria-hidden />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -68,8 +69,9 @@ export function ProblemSolution() {
             </div>
             <ul className="mt-5 space-y-3 text-sm text-[hsl(var(--te-body))]">
               {after.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[hsl(var(--accent))]" /> {item}
+                <li key={item} className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[hsl(var(--accent))]" aria-hidden />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
