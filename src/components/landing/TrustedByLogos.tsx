@@ -4,17 +4,19 @@ import {
   Paintbrush,
   Layout,
   HardHat,
-  Home,
+  Flame,
+  Key,
   type LucideIcon,
 } from "lucide-react";
 
 const trades: { label: string; icon: LucideIcon }[] = [
   { label: "Plombier", icon: Wrench },
-  { label: "Électricien", icon: Zap },
+  { label: "Électriciens", icon: Zap },
   { label: "Peintre", icon: Paintbrush },
   { label: "Carreleur", icon: Layout },
   { label: "Maçon", icon: HardHat },
-  { label: "Couvreur", icon: Home },
+  { label: "Chauffagiste", icon: Flame },
+  { label: "Serruriers", icon: Key },
 ];
 
 export function TrustedByLogos() {

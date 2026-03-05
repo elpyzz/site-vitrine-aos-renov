@@ -1,14 +1,15 @@
 "use client";
 
-import { Wrench, Zap, Paintbrush, Layout, HardHat, Home } from "lucide-react";
+import { Wrench, Zap, Paintbrush, Layout, HardHat, Flame, Key } from "lucide-react";
 
 const trades: { label: string; icon: React.ElementType }[] = [
   { label: "Plombier", icon: Wrench },
-  { label: "Électricien", icon: Zap },
+  { label: "Électriciens", icon: Zap },
   { label: "Peintre", icon: Paintbrush },
   { label: "Carreleur", icon: Layout },
   { label: "Maçon", icon: HardHat },
-  { label: "Couvreur", icon: Home },
+  { label: "Chauffagiste", icon: Flame },
+  { label: "Serruriers", icon: Key },
 ];
 
 export function TrustBar() {

@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   description:
     "Solution SaaS pour artisans du BTP : devis, factures, envoi en 1 clic, planning chantiers. Simple et rapide.",
   keywords: ["artisan", "BTP", "devis", "facture", "planning", "chantier", "SaaS"],
+  icons: {
+    icon: "/favicon.png",
+  },
   openGraph: {
     title: "Aos Renov — Devis, factures et planning pour artisans",
     description:
