@@ -34,9 +34,10 @@ export function ProblemSolution() {
           </h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-6">
-          {/* Card Avant — slide-in gauche */}
-          <div className="reveal reveal-slide-left reveal-delay-1 flex flex-col rounded-xl border-2 border-[rgba(239,68,68,0.3)] border-l-4 border-l-[#EF4444] bg-[#1A0A0A] p-6 shadow-[0_25px_50px_rgba(239,68,68,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(239,68,68,0.5)] hover:shadow-[0_28px_56px_rgba(239,68,68,0.2)] md:max-w-md md:rotate-[-1.5deg] md:origin-bottom">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid gap-8 md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-6">
+            {/* Card Avant — slide-in gauche */}
+            <div className="reveal reveal-slide-left reveal-delay-1 flex flex-col rounded-xl border-2 border-[rgba(239,68,68,0.3)] border-l-4 border-l-[#EF4444] bg-[#1A0A0A] p-6 shadow-[0_25px_50px_rgba(239,68,68,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(239,68,68,0.5)] hover:shadow-[0_28px_56px_rgba(239,68,68,0.2)] md:max-w-md md:justify-self-end md:rotate-[-1.5deg] md:origin-bottom">
             <div className="flex items-center gap-3">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[rgba(239,68,68,0.1)] text-[#EF4444]">
                 <X className="h-5 w-5" />
@@ -53,14 +54,14 @@ export function ProblemSolution() {
                 </li>
               ))}
             </ul>
-          </div>
+            </div>
 
-          <div className="hidden items-center justify-center py-4 md:flex" aria-hidden>
-            <span className="animate-pulse text-4xl text-[#EF4444] md:text-5xl">→</span>
-          </div>
+            <div className="hidden items-center justify-center py-4 md:flex" aria-hidden>
+              <span className="animate-pulse text-4xl text-[#EF4444] md:text-5xl">→</span>
+            </div>
 
-          {/* Card Après — slide-in droite */}
-          <div className="reveal reveal-slide-right reveal-delay-2 flex flex-col rounded-xl border-2 border-[rgba(16,185,129,0.3)] border-l-4 border-l-[#10B981] bg-[#0A1A0F] p-6 shadow-[0_25px_50px_rgba(16,185,129,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(16,185,129,0.5)] hover:shadow-[0_28px_56px_rgba(16,185,129,0.2)] md:max-w-md md:rotate-[1deg] md:origin-bottom">
+            {/* Card Après — slide-in droite */}
+            <div className="reveal reveal-slide-right reveal-delay-2 flex flex-col rounded-xl border-2 border-[rgba(16,185,129,0.3)] border-l-4 border-l-[#10B981] bg-[#0A1A0F] p-6 shadow-[0_25px_50px_rgba(16,185,129,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(16,185,129,0.5)] hover:shadow-[0_28px_56px_rgba(16,185,129,0.2)] md:max-w-md md:justify-self-start md:rotate-[1deg] md:origin-bottom">
             <div className="flex items-center gap-3">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[rgba(16,185,129,0.1)] text-[#10B981]">
                 <Check className="h-5 w-5" />
@@ -77,6 +78,7 @@ export function ProblemSolution() {
                 </li>
               ))}
             </ul>
+            </div>
           </div>
         </div>
 
