@@ -8,91 +8,107 @@ import {
   Receipt,
   Zap,
 } from "lucide-react";
-import { SectionWave } from "./SectionWave";
+import { SectionWaveToNavy } from "./SectionWave";
 
 const features = [
   {
     icon: FileText,
     title: "Devis rapides et professionnels",
     description: "Réalisez vos devis en quelques minutes, sans Excel ni modèles compliqués.",
-  },
-  {
-    icon: Zap,
-    title: "Devis → Facture en 1 clic",
-    description: "Transformez un devis accepté en facture en 1 clic, sans ressaisir les montants.",
+    iconBg: "rgba(37,99,235,0.1)",
+    iconColor: "#2563EB",
   },
   {
     icon: Receipt,
     title: "Factures claires, paiements plus rapides",
     description: "Créez des factures conformes et suivez facilement celles qui restent à encaisser.",
+    iconBg: "rgba(245,158,11,0.1)",
+    iconColor: "#F59E0B",
   },
   {
     icon: Send,
     title: "Envoi et relances en 1 clic",
-    description: "Envoyez vos devis et factures par email directement depuis l'app. Relancez en un bouton, quand vous le décidez.",
+    description: "Envoyez vos devis et factures par email. Relancez en un bouton, quand vous le décidez.",
+    iconBg: "rgba(16,185,129,0.1)",
+    iconColor: "#10B981",
   },
   {
     icon: Calendar,
     title: "Planning clair, zéro papier",
     description: "Visualisez vos chantiers et interventions en un coup d'œil. Fini le planning dans la tête.",
+    iconBg: "rgba(139,92,246,0.1)",
+    iconColor: "#8B5CF6",
+  },
+  {
+    icon: Zap,
+    title: "Devis → Facture en 1 clic",
+    description: "Transformez un devis accepté en facture en 1 clic, sans ressaisir les montants.",
+    iconBg: "rgba(37,99,235,0.1)",
+    iconColor: "#2563EB",
   },
   {
     icon: Camera,
-    title: "Estimation rapide via photo (option)",
+    title: "Estimation via photo",
     description: "Gagnez du temps en estimant certains chantiers à partir d'une photo.",
+    iconBg: "rgba(239,68,68,0.1)",
+    iconColor: "#EF4444",
+    badge: "⭐ Exclusif",
   },
 ];
 
-const variants = ["te-feature-card-variant-accent", "te-feature-card-variant-skye", "te-feature-card-variant-orange"] as const;
-
 export function Features() {
   return (
-    <section id="fonctionnalites" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
-      <div className="te-bg-animated-light" aria-hidden />
-      {/* Forme décorative en coin */}
-      <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[hsl(var(--accent))]/8 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "0s" }} />
-      <div className="absolute -left-20 bottom-1/4 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/6 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "2s" }} />
-
+    <section
+      id="fonctionnalites"
+      className="relative scroll-mt-20 overflow-hidden border-b border-[#E2E8F0] py-20 md:py-24"
+      style={{
+        backgroundColor: "#FAFAFA",
+        backgroundImage: "radial-gradient(circle, #E2E8F0 1px, transparent 1px)",
+        backgroundSize: "32px 32px",
+      }}
+    >
       <div className="container relative mx-auto px-4">
-        <div className="mb-14 text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
-          <span className="te-section-short-title mx-auto">Nos atouts</span>
-          <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">
-            Fonctionnalités
+        <div className="mb-14 text-center reveal">
+          <span className="section-label-light mx-auto inline-block">Fonctionnalités</span>
+          <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight text-[#0F172A] md:text-4xl lg:text-5xl">
+            <span className="block">Tout ce dont vous avez besoin.</span>
+            <span className="mt-1 block italic text-[#2563EB]">Rien de superflu.</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-lg text-[hsl(var(--te-body))]">
-            Tout ce dont vous avez besoin pour gérer votre activité au quotidien.
-          </p>
         </div>
-        <div className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map(({ icon: Icon, title, description }, index) => (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map(({ icon: Icon, title, description, iconBg, iconColor, badge }, index) => (
             <div
               key={title}
-              className={`te-card-hover animate-te-fade-up group relative rounded-2xl border border-[hsl(var(--border))] bg-white p-8 shadow-[0px_0px_60px_0px_rgba(0,0,0,0.06)] transition-all duration-500 hover:border-transparent hover:shadow-xl ${variants[index % variants.length]}`}
-              style={{ animationDelay: `${0.08 + index * 0.06}s` }}
+              className="reveal group relative rounded-[20px] border border-[#E2E8F0] bg-white p-8 shadow-none transition-all duration-300 hover:-translate-y-2 hover:border-[#2563EB] hover:shadow-[0_32px_64px_rgba(37,99,235,0.12)]"
+              style={{ transitionDelay: `${index * 80}ms` }}
             >
-              <div>
-                <div className="te-info-card-inner flex flex-col gap-6">
-                  <div className="te-content-wrapper flex flex-col items-start text-left">
-                    <div className="te-title-wrapper flex flex-col items-start gap-4 pb-3">
-                      <span className="te-feature-icon-wrap flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-2 transition duration-300 group-hover:scale-105">
-                        <Icon className="h-7 w-7" />
-                      </span>
-                      <h3 className="text-xl font-medium text-[hsl(var(--te-dark))]">{title}</h3>
-                      <div className="te-feature-divider h-0.5 w-14 rounded" />
-                    </div>
-                    <div className="content flex flex-col items-start gap-2">
-                      <p className="desc m-0 text-[hsl(var(--te-body))] leading-relaxed">
-                        {description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              {badge && (
+                <span
+                  className="absolute right-4 top-4 rounded-full bg-[#F59E0B] px-2.5 py-1 font-mono text-[11px] font-medium text-[#0F172A]"
+                  style={{ fontFamily: "var(--font-dm-mono), monospace" }}
+                >
+                  {badge}
+                </span>
+              )}
+              <div
+                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[14px] transition-colors duration-300"
+                style={{
+                  backgroundColor: iconBg,
+                  width: 56,
+                  height: 56,
+                }}
+              >
+                <Icon
+                  className="h-12 w-12 text-slate-400 transition-colors duration-300 group-hover:text-[#2563EB]"
+                />
               </div>
+              <h3 className="mt-5 text-lg font-bold text-[#0F172A]">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[hsl(var(--te-body))]">{description}</p>
             </div>
           ))}
         </div>
       </div>
-      <SectionWave />
+      <SectionWaveToNavy />
     </section>
   );
 }

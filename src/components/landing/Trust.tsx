@@ -19,39 +19,47 @@ const trustItems = [
   },
 ];
 
+const iconBg = ["bg-accent-hex/20 text-accent-hex", "bg-success/20 text-success", "bg-accent-warm/20 text-accent-warm"];
+
 export function Trust() {
   return (
-    <section className="relative overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
-      <div className="te-bg-animated-light" aria-hidden />
-      <div className="absolute left-0 bottom-1/4 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/5 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "1.5s" }} />
+    <section className="relative overflow-hidden border-b border-white/10 bg-primary py-20 md:py-24">
       <div className="container relative mx-auto px-4">
-        <div className="text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
+        <div className="reveal text-center">
           <span className="te-section-short-title mx-auto">Confiance</span>
-          <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">Confiance</h2>
+          <h2 className="te-section-title-lg mt-4 text-text-primary">
+            Un outil <span className="text-accent-hex">sérieux</span> pour votre activité
+          </h2>
         </div>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-[hsl(var(--te-body))] animate-te-fade-up" style={{ animationDelay: "0.1s" }}>
-          Un outil sérieux pour votre activité.
+        <p className="reveal mx-auto mt-3 max-w-2xl text-center text-lg text-text-secondary">
+          Données protégées, hébergement en France, équipe à vos côtés.
         </p>
-        <div className="mt-10 grid gap-6 sm:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-3">
           {trustItems.map(({ icon: Icon, title, description }, i) => (
-            <Card key={title} className="animate-te-fade-up text-center shadow-sm transition-all duration-300 hover:shadow-lg" style={{ animationDelay: `${0.15 + i * 0.06}s` }}>
+            <Card
+              key={title}
+              className="reveal overflow-hidden border-white/10 bg-secondary/50 text-left backdrop-blur"
+            >
               <CardHeader>
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[hsl(var(--accent))]/10 text-[hsl(var(--accent))]">
-                  <Icon className="h-6 w-6" />
+                <div className={`flex h-14 w-14 items-center justify-center rounded-2xl md:h-[48px] md:w-[48px] ${iconBg[i]}`}>
+                  <Icon className="h-7 w-7 md:h-8 md:w-8" />
                 </div>
-                <h3 className="text-lg font-semibold">{title}</h3>
+                <h3 className="mt-4 text-xl font-semibold text-text-primary">{title}</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[hsl(var(--muted-foreground))]">
-                  {description}
-                </p>
+                <p className="text-text-secondary leading-relaxed">{description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
-        <p className="mt-10 text-center text-sm font-medium text-[hsl(var(--foreground))]">
-          Aos Renov est conçu pour être simple, fiable et durable.
+        <p className="reveal mt-8 text-center text-sm font-medium text-text-secondary">
+          🇫🇷 Hébergé en France · RGPD conforme · SSL inclus
         </p>
+        <div className="reveal mt-6 rounded-2xl border border-white/20 bg-white/5 px-6 py-4 text-center backdrop-blur">
+          <p className="text-base font-semibold text-text-primary">
+            Aos Renov est conçu pour être <span className="text-accent-hex">simple</span>, <span className="text-success">fiable</span> et <span className="text-accent-warm">durable</span>.
+          </p>
+        </div>
       </div>
     </section>
   );

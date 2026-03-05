@@ -2,134 +2,153 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ZoomIn } from "lucide-react";
-import { ImageLightbox } from "@/components/ui/image-lightbox";
+import { SectionWaveToWhite } from "./SectionWave";
 
-const screenshots = [
+const tabs = [
   {
+    id: "overview",
+    number: "01",
+    label: "Vue d'ensemble",
+    description: "Tous vos indicateurs en un coup d'œil",
     src: "/app-dashboard.png",
-    alt: "Tableau de bord Aos Renov — vue d'ensemble, devis, chantiers et facturation",
-    title: "Vue d'ensemble",
-    description: "Devis, chantiers actifs et facturation en un coup d'œil.",
+    alt: "Tableau de bord Aos Renov",
   },
   {
-    src: "/app-planning.png",
-    alt: "Planning des chantiers Aos Renov — calendrier des interventions",
-    title: "Planning des chantiers",
-    description: "Calendrier intégré pour organiser vos interventions.",
-  },
-  {
-    src: "/app-chantiers.png",
-    alt: "Mes Chantiers Aos Renov — gérez vos projets en cours et terminés",
-    title: "Mes Chantiers",
-    description: "Gérez tous vos projets en cours et terminés.",
-  },
-  {
+    id: "devis",
+    number: "02",
+    label: "Générateur de devis",
+    description: "Devis professionnel en moins de 5 minutes",
     src: "/app-devis.png",
-    alt: "Générateur de devis Aos Renov — devis professionnels conformes BTP",
-    title: "Générateur de devis",
-    description: "Créez des devis professionnels conformes BTP.",
+    alt: "Générateur de devis Aos Renov",
   },
   {
+    id: "planning",
+    number: "03",
+    label: "Planning des chantiers",
+    description: "Visualisez toute votre semaine",
+    src: "/app-planning.png",
+    alt: "Planning Aos Renov",
+  },
+  {
+    id: "facturation",
+    number: "04",
+    label: "Facturation",
+    description: "Factures conformes BTP, envoyées en 1 clic",
     src: "/app-facturation.png",
-    alt: "Générateur de facturation Aos Renov — factures conformes",
-    title: "Facturation",
-    description: "Créez des factures professionnelles conformes BTP.",
+    alt: "Facturation Aos Renov",
   },
   {
-    src: "/app-dossiers.png",
-    alt: "Dossiers Aos Renov — devis et factures",
-    title: "Dossiers",
-    description: "Gérez tous vos devis et factures.",
-  },
-  {
+    id: "estimation",
+    number: "05",
+    label: "Estimation par photo",
+    description: "IA — uploadez une photo, obtenez une estimation",
     src: "/app-estimation.png",
-    alt: "Estimation automatique des chantiers Aos Renov — import des photos",
-    title: "Estimation automatique",
-    description: "Import des photos du chantier pour estimer.",
-  },
-  {
-    src: "/app-login.png",
-    alt: "Connexion Aos Renov — bienvenue sur votre compte",
-    title: "Connexion",
-    description: "Accédez à votre compte en toute sécurité.",
+    alt: "Estimation par photo Aos Renov",
   },
 ];
 
 export function AppScreenshots() {
-  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
-  const [lightboxAlt, setLightboxAlt] = useState("");
-  const [lightboxTitle, setLightboxTitle] = useState("");
-
-  const openLightbox = (src: string, alt: string, title: string) => {
-    setLightboxSrc(src);
-    setLightboxAlt(alt);
-    setLightboxTitle(title);
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <section
       id="app-en-images"
-      className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] bg-white py-20 md:py-24"
+      className="relative scroll-mt-20 overflow-hidden border-b border-white/10 bg-[#0A1628] py-20 md:py-24"
     >
-      <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[hsl(var(--accent))]/6 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "2s" }} />
       <div className="container relative mx-auto px-4">
-        <div className="mx-auto max-w-3xl text-center animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
-          <span className="te-section-short-title mx-auto">Découverte</span>
-          <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">
-            L&apos;app en images
+        <div className="mb-12 text-center reveal">
+          <span className="section-label-dark mx-auto inline-block">Découverte</span>
+          <h2 className="mt-4 font-display text-3xl font-extrabold text-white md:text-4xl lg:text-5xl">
+            Découvrez l&apos;interface
           </h2>
-          <p className="mt-3 text-lg text-[hsl(var(--te-body))]">
-            Une interface simple pour gérer vos devis, factures et planning. Cliquez sur une image pour l&apos;agrandir.
+          <p className="mx-auto mt-3 max-w-2xl text-lg text-white/60">
+            Conçu pour aller vite. Intuitif dès le premier jour.
           </p>
         </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {screenshots.map(({ src, alt, title, description }, i) => (
-            <div
-              key={src}
-              className="animate-te-fade-up group overflow-hidden rounded-2xl border border-[hsl(var(--border))] bg-white shadow-[0px_0px_40px_0px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-xl"
-              style={{ animationDelay: `${0.06 + i * 0.04}s` }}
-            >
-              <button
-                type="button"
-                onClick={() => openLightbox(src, alt, title)}
-                className="relative block w-full aspect-[3/2] overflow-hidden bg-[hsl(var(--muted))]/20 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))] focus:ring-inset"
-              >
-                <Image
-                  src={src}
-                  alt={alt}
-                  width={1600}
-                  height={1067}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  quality={100}
-                  unoptimized
+
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-12">
+          {/* Tabs — toujours visibles (pas de reveal pour éviter disparition au clic) */}
+          <div className="shrink-0 lg:w-[320px]">
+            {/* Mobile: indicateurs d'onglet */}
+            <div className="mb-4 flex justify-center gap-2 lg:hidden">
+              {tabs.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setActiveIndex(i)}
+                  className={`h-2 rounded-full transition-all ${
+                    i === activeIndex ? "w-6 bg-[#2563EB]" : "w-2 bg-white/30"
+                  }`}
+                  aria-label={`Voir ${tabs[i].label}`}
                 />
-                <span className="absolute right-2 top-2 flex h-9 w-9 items-center justify-center rounded-full bg-black/50 text-white opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100" aria-hidden>
-                  <ZoomIn className="h-5 w-5" />
-                </span>
-              </button>
-              <div className="border-t border-[hsl(var(--border))] bg-white px-4 py-3">
-                <h3 className="font-semibold text-[hsl(var(--te-dark))] text-sm">
-                  {title}
-                </h3>
-                <p className="mt-0.5 text-xs text-[hsl(var(--te-body))] line-clamp-2">
-                  {description}
-                </p>
+              ))}
+            </div>
+            <div className="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
+              {tabs.map((tab, i) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveIndex(i)}
+                  className={`flex min-w-[200px] flex-col rounded-lg border-l-2 px-4 py-3 text-left transition-all lg:min-w-0 ${
+                    i === activeIndex
+                      ? "border-[#2563EB] bg-[rgba(37,99,235,0.08)] text-white"
+                      : "border-white/10 text-white/50 hover:text-white/70"
+                  }`}
+                >
+                  <span className="font-mono text-sm text-[#2563EB]">{tab.number}</span>
+                  <span className="mt-1 font-semibold">{tab.label}</span>
+                  {i === activeIndex && (
+                    <span className="mt-1 text-sm text-white/70">{tab.description}</span>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Device frame + screenshot — toujours visible */}
+          <div className="flex-1">
+            <div className="relative mx-auto max-w-3xl overflow-hidden rounded-xl bg-[#1e293b] shadow-[0_40px_80px_rgba(0,0,0,0.5)]">
+              {/* Browser mockup bar */}
+              <div className="flex items-center gap-2 border-b border-white/10 bg-[#0f172a] px-4 py-3">
+                <div className="flex gap-2">
+                  <span className="h-3 w-3 rounded-full bg-red-500/80" />
+                  <span className="h-3 w-3 rounded-full bg-amber-500/80" />
+                  <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
+                </div>
+                <div className="ml-4 flex-1 rounded-md bg-white/5 px-3 py-1.5 font-mono text-xs text-white/50">
+                  app.aosrenov.fr
+                </div>
+              </div>
+              <div className="relative aspect-video min-h-[200px] overflow-hidden bg-[#0f172a] p-2">
+                {tabs.map((tab, i) => (
+                  <div
+                    key={tab.id}
+                    className="absolute inset-2 transition-all duration-300"
+                    style={{
+                      opacity: i === activeIndex ? 1 : 0,
+                      transform: i === activeIndex ? "scale(1)" : "scale(0.95)",
+                      pointerEvents: i === activeIndex ? "auto" : "none",
+                      zIndex: i === activeIndex ? 10 : 0,
+                    }}
+                  >
+                    <Image
+                      src={tab.src}
+                      alt={tab.alt}
+                      width={1200}
+                      height={800}
+                      className="h-full w-full rounded-lg object-cover object-top"
+                      sizes="(max-width: 1024px) 100vw, 800px"
+                      unoptimized
+                      priority={i === 0}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
-      {lightboxSrc && (
-        <ImageLightbox
-          open={!!lightboxSrc}
-          onOpenChange={(open) => !open && setLightboxSrc(null)}
-          src={lightboxSrc}
-          alt={lightboxAlt}
-          title={lightboxTitle}
-        />
-      )}
+      <SectionWaveToWhite />
     </section>
   );
 }

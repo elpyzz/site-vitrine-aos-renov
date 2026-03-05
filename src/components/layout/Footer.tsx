@@ -10,13 +10,11 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden text-white">
-      <div className="te-bg-animated-footer" aria-hidden />
+    <footer className="relative overflow-hidden bg-[#050D18] text-white">
+      <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-accent-hex to-accent-warm" aria-hidden />
       <div className="container relative mx-auto px-4 py-16">
-        {/* Bloc logo + description + colonnes type template */}
-        <div className="te-footer-sec">
-          <div className="grid gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-4">
+        <div className="grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-4">
               <div className="te-footer-widget animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
                 <Link href="/" className="te-footer-logo text-xl font-semibold text-white">
                   Aos Renov
@@ -36,7 +34,7 @@ export function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-sm text-white/70 transition-colors hover:text-[#317EFE]"
+                        className="text-sm text-white/70 transition-colors hover:text-accent-hex"
                       >
                         {link.label}
                       </Link>
@@ -63,26 +61,25 @@ export function Footer() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="footer-bottom-area mt-12 border-t border-white/10 pt-8">
-          <div className="te-footer-bottom-wrapper flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <div className="te-copyright-text text-center text-sm text-white/60 sm:text-left">
-              © {new Date().getFullYear()} Aos Renov. Tous droits réservés.
+        <div className="mt-12 border-t border-white/10 pt-8">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <div className="text-center text-sm text-white/60 sm:text-left">
+              © {new Date().getFullYear()} Aos Renov. Tous droits réservés. Fait avec ❤️ pour les artisans de France
             </div>
             <div className="te-footer-bottom-menu">
               <ul className="flex flex-wrap justify-center gap-6 text-sm">
                 <li>
-                  <Link href="/mentions-legales" className="text-white/60 transition-colors hover:text-[#317EFE]">
+                  <Link href="/mentions-legales" className="text-white/60 transition-colors hover:text-accent-hex">
                     Mentions légales
                   </Link>
                 </li>
                 <li>
-                  <Link href="/confidentialite" className="text-white/60 transition-colors hover:text-[#317EFE]">
+                  <Link href="/confidentialite" className="text-white/60 transition-colors hover:text-accent-hex">
                     Confidentialité
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-white/60 transition-colors hover:text-[#317EFE]">
+                  <Link href="/contact" className="text-white/60 transition-colors hover:text-accent-hex">
                     Contact
                   </Link>
                 </li>

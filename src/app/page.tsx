@@ -1,4 +1,5 @@
 import { Hero } from "@/components/landing/Hero";
+import { StatsSection } from "@/components/landing/StatsSection";
 import { ProblemSolution } from "@/components/landing/ProblemSolution";
 import { Features } from "@/components/landing/Features";
 import { AppScreenshots } from "@/components/landing/AppScreenshots";
@@ -15,6 +16,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <StatsSection />
       <ProblemSolution />
       <Features />
       <AppScreenshots />

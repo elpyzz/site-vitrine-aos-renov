@@ -1,12 +1,28 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Bricolage_Grotesque, DM_Mono } from "next/font/google";
 import "./globals.css";
+import { UrgencyBanner } from "@/components/layout/UrgencyBanner";
 import { Header } from "@/components/layout/Header";
+import { TrustBar } from "@/components/layout/TrustBar";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollRevealProvider } from "@/components/layout/ScrollRevealProvider";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  variable: "--font-dm-mono",
+  weight: "400",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -34,10 +50,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={inter.variable}>
+    <html lang="fr" className={`${inter.variable} ${bricolage.variable} ${dmMono.variable}`}>
       <body className={`min-h-screen flex flex-col font-sans ${inter.className}`}>
+        <UrgencyBanner />
         <Header />
-        <main className="flex-1">{children}</main>
+        <TrustBar />
+        <ScrollRevealProvider>
+          <main className="flex-1">{children}</main>
+        </ScrollRevealProvider>
         <Footer />
       </body>
     </html>

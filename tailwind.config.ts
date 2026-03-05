@@ -10,10 +10,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        primary: "#0A1628",
+        secondary: "#1A3A6B",
+        "accent-hex": "#2563EB",
+        "accent-warm": "#F59E0B",
+        "text-primary": "#F8FAFC",
+        "text-primary-dark": "#0F172A",
+        "text-secondary": "#94A3B8",
+        success: "#10B981",
+        danger: "#EF4444",
+        "bg-light": "#F0F4FF",
+        footer: "#050D18",
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+      },
+      fontFamily: {
+        display: ["var(--font-bricolage)", "system-ui", "sans-serif"],
+        mono: ["var(--font-dm-mono)", "monospace"],
       },
       keyframes: {
         "accordion-down": {

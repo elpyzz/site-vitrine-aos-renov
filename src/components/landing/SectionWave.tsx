@@ -29,3 +29,33 @@ export function SectionWaveToWhite({ className = "" }: { className?: string }) {
     </div>
   );
 }
+
+/** Vague pour section dark → fond blanc cassé #FAFAFA (Fonctionnalités) */
+export function SectionWaveToLight({ className = "" }: { className?: string }) {
+  return (
+    <div className={`te-section-wave-bottom ${className}`} aria-hidden>
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path
+          d="M0 80V55c240-25 480-40 720-25s480 55 720 45V80H0Z"
+          fill="currentColor"
+          style={{ color: "#FAFAFA" }}
+        />
+      </svg>
+    </div>
+  );
+}
+
+/** Vague pour section claire → dark navy #0A1628 (Logiciel en images) */
+export function SectionWaveToNavy({ className = "" }: { className?: string }) {
+  return (
+    <div className={`te-section-wave-bottom ${className}`} aria-hidden>
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path
+          d="M0 80V55c240-25 480-40 720-25s480 55 720 45V80H0Z"
+          fill="currentColor"
+          style={{ color: "#0A1628" }}
+        />
+      </svg>
+    </div>
+  );
+}

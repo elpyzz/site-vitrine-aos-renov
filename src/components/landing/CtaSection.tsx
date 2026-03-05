@@ -49,22 +49,33 @@ export function CtaSection() {
 
   return (
     <>
-      <section id="contact" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
-        <div className="te-bg-animated-cta" aria-hidden />
-        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-[hsl(var(--accent))]/8 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "1s" }} />
+      <section id="contact" className="relative scroll-mt-20 overflow-hidden border-b border-primary/10 bg-primary py-20 md:py-24">
+        <div className="mesh-blob absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-accent-hex" style={{ opacity: 0.15 }} />
+        <div className="mesh-blob absolute -right-40 bottom-1/4 h-80 w-80 rounded-full bg-secondary" style={{ opacity: 0.15, animationDelay: "2s" }} />
         <div className="container relative mx-auto px-4">
-          <div className="animate-te-fade-up mx-auto max-w-2xl rounded-2xl border border-[hsl(var(--accent))]/15 bg-white p-6 shadow-[0px_0px_60px_0px_rgba(0,0,0,0.08)] md:p-8" style={{ animationDelay: "0.1s" }}>
-            <span className="te-section-short-title">Contact</span>
-            <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">Prêt à simplifier votre gestion ?</h2>
-            <p className="mt-3 text-lg text-[hsl(var(--te-body))]">
-              On vous rappelle pour comprendre votre activité et vous montrer comment gagner du temps dès cette semaine.
+          <h2 className="reveal text-center font-display text-4xl font-extrabold text-text-primary md:text-5xl">
+            Prêt à récupérer vos soirées ?
+          </h2>
+          <p className="reveal mx-auto mt-4 max-w-xl text-center text-lg text-text-secondary">
+            Une démo de 15 minutes suffit pour voir si c&apos;est fait pour vous. Sans engagement.
+          </p>
+          <a href="tel:+3369430343" className="reveal mt-6 block text-center text-3xl font-bold text-text-primary md:text-4xl">
+            📞 07 69 43 03 43
+          </a>
+          <p className="reveal mt-2 text-center text-sm text-text-secondary">
+            Réponse garantie sous 24h — souvent bien moins
+          </p>
+          <div className="reveal mx-auto mt-10 max-w-2xl rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur md:p-8">
+            <span className="te-section-short-title text-accent-hex">Contact</span>
+            <p className="mt-3 text-text-secondary">
+              Laissez vos coordonnées, on vous rappelle.
             </p>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <div>
-                <Label htmlFor="cta-name">Nom / Entreprise</Label>
+                <Label htmlFor="cta-name" className="text-text-primary">Nom / Entreprise</Label>
                 <Input
                   id="cta-name"
-                  className="mt-1"
+                  className="mt-1 border-white/30 bg-white/10 text-text-primary placeholder:text-white/50"
                   placeholder="Votre nom ou raison sociale"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -78,11 +89,11 @@ export function CtaSection() {
                 )}
               </div>
               <div>
-                <Label htmlFor="cta-email">Email</Label>
+                <Label htmlFor="cta-email" className="text-text-primary">Email</Label>
                 <Input
                   id="cta-email"
                   type="email"
-                  className="mt-1"
+                  className="mt-1 border-white/30 bg-white/10 text-text-primary placeholder:text-white/50"
                   placeholder="vous@exemple.fr"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -96,11 +107,11 @@ export function CtaSection() {
                 )}
               </div>
               <div>
-                <Label htmlFor="cta-phone">Téléphone</Label>
+                <Label htmlFor="cta-phone" className="text-text-primary">Téléphone</Label>
                 <Input
                   id="cta-phone"
                   type="tel"
-                  className="mt-1"
+                  className="mt-1 border-white/30 bg-white/10 text-text-primary placeholder:text-white/50"
                   placeholder="06 00 00 00 00"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
@@ -114,14 +125,15 @@ export function CtaSection() {
                 )}
               </div>
               <div className="pt-2">
-                <Button type="submit" disabled={loading} className="te-theme-btn w-full sm:w-auto animate-te-glow-soft">
+                <Button type="submit" disabled={loading} className="btn-shimmer btn-primary w-full rounded-full bg-accent-hex py-3 sm:w-auto">
                   {loading ? "Envoi…" : "Être rappelé gratuitement"}
                 </Button>
-                <p className="mt-3 text-sm text-[hsl(var(--muted-foreground))]">
-                  Réponse sous 24h — sans engagement.
+                <p className="mt-3 flex items-center gap-2 text-sm text-text-secondary">
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-hex" aria-hidden />
+                  Réponse sous 24h — sans engagement. Vos données sont sécurisées.
                 </p>
               </div>
-              <p className="mt-3 text-sm text-[hsl(var(--muted-foreground))]">
+              <p className="mt-3 text-sm text-text-secondary">
                 Aucune obligation. Vos informations restent privées. Pas de spam.
               </p>
             </form>

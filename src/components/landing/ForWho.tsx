@@ -1,70 +1,92 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { Target, ZoomIn } from "lucide-react";
-import { ImageLightbox } from "@/components/ui/image-lightbox";
+import Link from "next/link";
+import { Check, ArrowRight } from "lucide-react";
+
+const metiers = [
+  "Plombier / Chauffagiste",
+  "Électricien",
+  "Peintre / Carreleur",
+  "Maçon / Couvreur",
+  "Menuisier / Serrurier",
+  "Paysagiste",
+];
 
 export function ForWho() {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const artisanImage = "/artisan-tablette.png";
-
   return (
-    <section id="pour-qui" className="relative scroll-mt-20 overflow-hidden border-b border-[hsl(var(--border))] py-20 md:py-24">
-      <div className="te-bg-animated-light" aria-hidden />
-      <div className="absolute -left-32 top-1/4 h-64 w-64 rounded-full bg-[hsl(var(--accent))]/8 blur-3xl animate-te-float-slow" aria-hidden style={{ animationDelay: "1.5s" }} />
+    <section
+      id="pour-qui"
+      className="relative scroll-mt-20 overflow-hidden border-b border-white/10 bg-[#0A1628] py-20 md:py-24"
+    >
       <div className="container relative mx-auto px-4">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
-          <div className="animate-te-fade-up" style={{ animationDelay: "0.05s" }}>
-            <span className="te-section-short-title">Cible</span>
-            <h2 className="te-section-title-lg mt-4 text-[hsl(var(--te-dark))]">Pensé pour les artisans indépendants</h2>
-            <p className="mt-3 max-w-2xl text-lg text-[hsl(var(--te-body))]">
-              Vous travaillez seul ou en petite équipe ? Aos Renov est conçu pour simplifier votre quotidien.
-            </p>
-            <p className="mt-6 text-sm text-[hsl(var(--te-body))]">
-              Idéal pour les artisans qui gèrent eux-mêmes leurs devis, factures et planning.
-            </p>
-          </div>
-          <div className="relative flex justify-center lg:justify-end animate-te-fade-up" style={{ animationDelay: "0.15s" }}>
-            <div className="absolute -bottom-4 -right-4 z-0 h-24 w-24 rounded-full bg-[hsl(var(--accent))]/10 blur-xl" aria-hidden />
-            <div className="relative z-10 w-full max-w-md">
-              <button
-                type="button"
-                onClick={() => setLightboxOpen(true)}
-                className="relative block w-full overflow-hidden rounded-2xl border border-[hsl(var(--border))] shadow-xl transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))] focus:ring-offset-2"
+          {/* Visuel à gauche — photo avec overlay */}
+          <div className="reveal relative order-2 flex justify-center lg:order-1 lg:justify-start">
+            <div className="relative w-full max-w-md">
+              <div
+                className="relative overflow-hidden rounded-3xl shadow-[0_40px_80px_rgba(0,0,0,0.6)]"
+                style={{ borderRadius: 24 }}
               >
                 <Image
-                  src={artisanImage}
+                  src="/artisan-tablette.png"
                   alt="Artisan sur chantier utilisant une tablette pour gérer son activité"
                   width={1000}
                   height={667}
                   className="w-full object-cover object-top"
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  quality={100}
                   unoptimized
                 />
-                <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/80 bg-white/95 p-4 shadow-xl backdrop-blur sm:right-auto sm:max-w-[220px]">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--accent))]/20 text-[hsl(var(--accent))]">
-                      <Target className="h-5 w-5" />
-                    </span>
-                    <div>
-                      <p className="font-semibold text-[hsl(var(--te-dark))]">Pour les artisans</p>
-                      <p className="text-sm text-[hsl(var(--te-body))]">Devis, factures, planning en un seul outil.</p>
-                    </div>
-                  </div>
+                <div
+                  className="absolute inset-0 rounded-3xl"
+                  style={{
+                    background: "linear-gradient(to top, #0A1628 0%, transparent 60%)",
+                    borderRadius: 24,
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Texte à droite */}
+          <div className="order-1 flex flex-col lg:order-2">
+            <span className="section-label-light inline-block w-fit">POUR QUI ?</span>
+            <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight text-white md:text-4xl">
+              Fait pour vous si vous travaillez seul ou en petite équipe.
+            </h2>
+            <p className="mt-4 text-lg font-light text-white/65">
+              Devis, factures et planning en un seul outil — sans usine à gaz.
+            </p>
+
+            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {metiers.map((m) => (
+                <div
+                  key={m}
+                  className="reveal flex items-center gap-3 rounded-lg border border-white/5 bg-white/5 px-4 py-3"
+                  style={{ padding: "10px 16px" }}
+                >
+                  <span className="shrink-0 text-[#10B981]">
+                    <Check className="h-5 w-5" />
+                  </span>
+                  <span className="text-white">{m}</span>
                 </div>
-                <span className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white" aria-hidden>
-                  <ZoomIn className="h-5 w-5" />
-                </span>
-              </button>
-              <p className="mt-2 text-center text-xs text-[hsl(var(--te-body))]">Cliquez pour agrandir</p>
-              <ImageLightbox
-                open={lightboxOpen}
-                onOpenChange={setLightboxOpen}
-                src={artisanImage}
-                alt="Artisan sur chantier — Aos Renov"
-              />
+              ))}
+            </div>
+
+            <div className="reveal mt-6 rounded-lg border-l-4 border-[#F59E0B] bg-[rgba(245,158,11,0.1)] px-4 py-3">
+              <p className="text-white">
+                <span className="font-bold text-[#F59E0B]">+600 000</span> artisans indépendants en France
+                utilisent encore Excel ou Word pour leurs devis
+              </p>
+            </div>
+
+            <div className="mt-8 reveal">
+              <Link
+                href="#contact"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#2563EB] px-6 py-4 font-semibold text-white transition-all hover:bg-[#1d4ed8] hover:shadow-[0_20px_40px_rgba(37,99,235,0.35)] md:w-auto md:inline-flex"
+              >
+                Je veux tester gratuitement <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>
