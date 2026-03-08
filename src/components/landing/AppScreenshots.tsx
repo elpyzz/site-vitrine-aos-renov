@@ -138,6 +138,7 @@ export function AppScreenshots() {
                       height={800}
                       className="h-full w-full rounded-lg object-cover object-top"
                       sizes="(max-width: 1024px) 100vw, 800px"
+                      quality={100}
                       unoptimized
                       priority={i === 0}
                     />

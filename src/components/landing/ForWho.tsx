@@ -35,6 +35,7 @@ export function ForWho() {
                   height={667}
                   className="w-full object-cover object-top"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={100}
                   unoptimized
                 />
                 <div
