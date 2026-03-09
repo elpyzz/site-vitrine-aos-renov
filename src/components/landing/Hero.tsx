@@ -49,6 +49,7 @@ export function Hero() {
               <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-success" /> Sans engagement</span>
               <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-success" /> Réponse sous 24h</span>
               <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-success" /> Support humain</span>
+              <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-success" /> ✍️ Signature électronique (SignWell)</span>
             </p>
             <div className="reveal mt-8 flex items-center gap-3">
               <div className="flex -space-x-2">

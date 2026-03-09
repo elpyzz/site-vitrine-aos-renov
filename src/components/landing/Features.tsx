@@ -5,7 +5,6 @@ import {
   Send,
   Calendar,
   Camera,
-  Receipt,
   Zap,
 } from "lucide-react";
 import { SectionWaveToNavy } from "./SectionWave";
@@ -19,11 +18,13 @@ const features = [
     iconColor: "#2563EB",
   },
   {
-    icon: Receipt,
-    title: "Factures claires, paiements plus rapides",
-    description: "Créez des factures conformes et suivez facilement celles qui restent à encaisser.",
-    iconBg: "rgba(245,158,11,0.1)",
-    iconColor: "#F59E0B",
+    icon: "✍️",
+    title: "Signature Électronique",
+    description: "Envoyez vos devis pour signature en 1 clic avec SignWell. Votre client signe directement depuis son téléphone. Le devis est validé légalement — sans impression, sans scanner, sans délai.",
+    iconBg: "rgba(245,166,35,0.1)",
+    iconColor: "#F5A623",
+    badge: "NOUVEAU",
+    badgeNew: true,
   },
   {
     icon: Send,
@@ -76,31 +77,39 @@ export function Features() {
           </h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map(({ icon: Icon, title, description, iconBg, iconColor, badge }, index) => (
+          {features.map(({ icon: Icon, title, description, iconBg, iconColor, badge, badgeNew }, index) => (
             <div
               key={title}
-              className="reveal group relative rounded-[20px] border border-[#E2E8F0] bg-white p-8 shadow-none transition-all duration-300 hover:-translate-y-2 hover:border-[#2563EB] hover:shadow-[0_32px_64px_rgba(37,99,235,0.12)]"
+              className="reveal group relative overflow-visible rounded-[20px] border border-[#E2E8F0] bg-white p-8 shadow-none transition-all duration-300 hover:-translate-y-2 hover:border-[#2563EB] hover:shadow-[0_32px_64px_rgba(37,99,235,0.12)]"
               style={{ transitionDelay: `${index * 80}ms` }}
             >
               {badge && (
                 <span
-                  className="absolute right-4 top-4 rounded-full bg-[#F59E0B] px-2.5 py-1 font-mono text-[11px] font-medium text-[#0F172A]"
-                  style={{ fontFamily: "var(--font-dm-mono), monospace" }}
+                  className={
+                    badgeNew
+                      ? "absolute -top-2.5 right-4 rounded-full bg-[var(--accent-warm)] px-2.5 py-1 font-display text-[10px] font-extrabold uppercase tracking-widest text-[#050810]"
+                      : "absolute right-4 top-4 rounded-full bg-[#F59E0B] px-2.5 py-1 font-mono text-[11px] font-medium text-[#0F172A]"
+                  }
+                  style={badgeNew ? { fontFamily: "var(--font-bricolage), sans-serif" } : { fontFamily: "var(--font-dm-mono), monospace" }}
                 >
                   {badge}
                 </span>
               )}
               <div
-                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[14px] transition-colors duration-300"
+                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[14px] text-3xl transition-colors duration-300"
                 style={{
                   backgroundColor: iconBg,
                   width: 56,
                   height: 56,
                 }}
               >
-                <Icon
-                  className="h-12 w-12 text-slate-400 transition-colors duration-300 group-hover:text-[#2563EB]"
-                />
+                {typeof Icon === "string" ? (
+                  <span aria-hidden>{Icon}</span>
+                ) : (
+                  <Icon
+                    className="h-12 w-12 text-slate-400 transition-colors duration-300 group-hover:text-[#2563EB]"
+                  />
+                )}
               </div>
               <h3 className="mt-5 text-lg font-bold text-[#0F172A]">{title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-[hsl(var(--te-body))]">{description}</p>

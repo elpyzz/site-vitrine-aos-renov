@@ -8,7 +8,7 @@ const plans = [
     name: "Starter",
     tagline: "L'essentiel",
     description: "Pour démarrer : devis, factures, envoi en 1 clic.",
-    features: ["Devis illimités", "Factures", "Envoi email 1 clic", "Support email"],
+    features: ["Devis illimités", "Factures", "Envoi email 1 clic", "Signature électronique clients incluse (SignWell)", "Support email"],
     highlighted: false,
   },
   {
@@ -18,6 +18,7 @@ const plans = [
     features: [
       "Tout Starter",
       "Planning chantiers",
+      "Signature électronique clients incluse (SignWell)",
       "Estimation via photo (option)",
       "Support prioritaire",
     ],

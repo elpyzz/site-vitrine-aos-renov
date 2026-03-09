@@ -154,6 +154,14 @@
   }
 }
 
+@keyframes pulse-amber {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(245, 166, 35, 0); }
+}
+.animate-pulse-amber {
+  animation: pulse-amber 2s infinite;
+}
+
 @layer components {
   .te-section-short-title {
     font-size: 0.8125rem;

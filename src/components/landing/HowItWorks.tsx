@@ -10,7 +10,7 @@ const steps = [
   },
   {
     title: "Premier devis",
-    description: "Ajoutez un client, vos lignes de prestation et générez votre devis. Envoi en 1 clic.",
+    description: "Ajoutez un client, vos lignes de prestation et générez votre devis. Envoyez votre devis par email avec un lien de signature électronique (SignWell) — votre client signe en 30 secondes depuis son téléphone.",
   },
   {
     title: "Vous êtes opérationnel",

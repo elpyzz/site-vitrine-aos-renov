@@ -9,6 +9,7 @@ const before = [
   "Des relances oubliées, des paiements qui tardent",
   "Un planning dans votre tête ou sur des feuilles volantes",
   "Vous cherchez des infos pendant qu'un client attend",
+  "Devis imprimé, signé à la main, renvoyé par courrier ou photo floue",
 ];
 
 const after = [
@@ -17,6 +18,7 @@ const after = [
   "Devis → facture en 1 clic, sans ressaisir",
   "Votre planning est clair en un coup d'œil",
   "Vous savez exactement où vous en êtes",
+  "Devis signé électroniquement en quelques minutes",
 ];
 
 export function ProblemSolution() {
