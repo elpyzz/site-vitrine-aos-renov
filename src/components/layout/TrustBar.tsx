@@ -33,15 +33,15 @@ export function TrustBar() {
         </p>
       </div>
 
-      {/* Desktop : carousel pleine largeur (jusqu'aux bords de l'écran) */}
+      {/* Desktop : carousel pleine largeur, défilement continu sans trou */}
       <div className="hidden w-full overflow-hidden md:block">
-        <div className="flex w-max animate-scroll-trades">
-          <div className="flex shrink-0 gap-3 px-4">
+        <div className="flex w-max animate-scroll-trades gap-0">
+          <div className="flex shrink-0 gap-3 pl-4 pr-3">
             {trades.map(({ label, icon: Icon }) => (
               <Pill key={label} label={label} Icon={Icon} />
             ))}
           </div>
-          <div className="flex shrink-0 gap-3 px-4">
+          <div className="flex shrink-0 gap-3 pl-0 pr-4">
             {trades.map(({ label, icon: Icon }) => (
               <Pill key={`${label}-2`} label={label} Icon={Icon} />
             ))}

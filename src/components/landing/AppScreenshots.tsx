@@ -64,6 +64,9 @@ export function AppScreenshots() {
           <p className="mx-auto mt-3 max-w-2xl text-lg text-white/60">
             Conçu pour aller vite. Intuitif dès le premier jour.
           </p>
+          <p className="mx-auto mt-2 text-sm text-white/40">
+            Un simple avant-goût — l&apos;application propose bien plus.
+          </p>
         </div>
 
         <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-12">
