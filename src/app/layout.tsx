@@ -3,7 +3,6 @@ import { Inter, Bricolage_Grotesque, DM_Mono } from "next/font/google";
 import "./globals.css";
 import { UrgencyBanner } from "@/components/layout/UrgencyBanner";
 import { Header } from "@/components/layout/Header";
-import { TrustBar } from "@/components/layout/TrustBar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollRevealProvider } from "@/components/layout/ScrollRevealProvider";
 
@@ -57,7 +56,6 @@ export default function RootLayout({
       <body className={`min-h-screen flex flex-col font-sans ${inter.className}`}>
         <UrgencyBanner />
         <Header />
-        <TrustBar />
         <ScrollRevealProvider>
           <main className="flex-1">{children}</main>
         </ScrollRevealProvider>

@@ -18,6 +18,7 @@ const plans = [
     features: [
       "Tout Starter",
       "Planning chantiers",
+      "Système de comptabilité",
       "Signature électronique clients incluse (SignWell)",
       "Estimation via photo (option)",
       "Support prioritaire",
