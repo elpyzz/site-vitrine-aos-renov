@@ -2,10 +2,10 @@
 
 import {
   FileText,
-  Send,
   Calendar,
   Camera,
   Zap,
+  BookOpen,
 } from "lucide-react";
 import { SectionWaveToNavy } from "./SectionWave";
 
@@ -19,24 +19,17 @@ const features = [
   },
   {
     icon: "✍️",
-    title: "Signature Électronique",
-    description: "Envoyez vos devis pour signature en 1 clic avec SignWell. Votre client signe directement depuis son téléphone. Le devis est validé légalement — sans impression, sans scanner, sans délai.",
+    title: "Envoi, relances et signature en 1 clic",
+    description: "Envoyez devis et factures par email, relancez en un clic. Signature électronique avec SignWell — votre client signe depuis son téléphone.",
     iconBg: "rgba(245,166,35,0.1)",
     iconColor: "#F5A623",
     badge: "NOUVEAU",
     badgeNew: true,
   },
   {
-    icon: Send,
-    title: "Envoi et relances en 1 clic",
-    description: "Envoyez vos devis et factures par email. Relancez en un bouton, quand vous le décidez.",
-    iconBg: "rgba(16,185,129,0.1)",
-    iconColor: "#10B981",
-  },
-  {
     icon: Calendar,
     title: "Planning clair, zéro papier",
-    description: "Visualisez vos chantiers et interventions en un coup d'œil. Fini le planning dans la tête.",
+    description: "Visualisez vos chantiers et interventions en un coup d'œil.",
     iconBg: "rgba(139,92,246,0.1)",
     iconColor: "#8B5CF6",
   },
@@ -50,10 +43,17 @@ const features = [
   {
     icon: Camera,
     title: "Estimation via photo",
-    description: "Gagnez du temps en estimant certains chantiers à partir d'une photo.",
+    description: "Estimez certains chantiers à partir d'une photo et gagnez du temps.",
     iconBg: "rgba(239,68,68,0.1)",
     iconColor: "#EF4444",
     badge: "⭐ Exclusif",
+  },
+  {
+    icon: BookOpen,
+    title: "Comptabilité simplifiée",
+    description: "CA en temps réel, livre de recettes en un clic, export PDF prêt pour l'URSSAF.",
+    iconBg: "rgba(34,197,94,0.1)",
+    iconColor: "#22C55E",
   },
 ];
 

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, ArrowRight, Hammer } from "lucide-react";
+import { ArrowRight, Hammer } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -21,23 +21,23 @@ export function Header() {
   const demoHref = isHome ? "#contact" : "/contact";
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-primary/95 shadow-lg backdrop-blur-[20px]">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#0F172A] shadow-lg backdrop-blur-[20px]">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link
           href="/"
-          className="flex items-center gap-2 text-xl font-bold text-text-primary"
+          className="flex items-center gap-2.5 text-[1.25rem] font-bold text-white"
         >
-          <Hammer className="h-6 w-6 shrink-0 text-accent-hex" aria-hidden />
+          <Hammer className="h-7 w-7 shrink-0 text-accent-warm" aria-hidden />
           <span>Aos Renov</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-5">
           {navItems.map((item) =>
             item.href.startsWith("#") ? (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-white/70 transition hover:text-white hover:underline underline-offset-4"
+                className="nav-link-underline py-4 text-sm font-medium text-white/70 transition hover:text-white"
               >
                 {item.label}
               </a>
@@ -45,7 +45,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-white/70 transition hover:text-white hover:underline underline-offset-4"
+                className="nav-link-underline py-4 text-sm font-medium text-white/70 transition hover:text-white"
               >
                 {item.label}
               </Link>
@@ -53,16 +53,16 @@ export function Header() {
           )}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3">
           <Link
             href={demoHref}
-            className="text-sm font-medium text-white/70 transition hover:text-white"
+            className="flex items-center gap-1.5 text-sm font-medium text-white/70 transition hover:text-white"
           >
-            Voir une démo
+            Voir une démo <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           <Link
             href="/contact"
-            className="btn-shimmer btn-primary inline-flex items-center gap-2 rounded-full bg-accent-hex px-6 py-2.5 text-sm font-semibold text-white"
+            className="inline-flex items-center gap-2 rounded-full bg-accent-hex px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110 hover:scale-[1.03]"
           >
             Demander une démo <ArrowRight className="h-4 w-4" />
           </Link>
@@ -70,53 +70,79 @@ export function Header() {
 
         <button
           type="button"
-          className="md:hidden rounded-lg p-2 text-white/80 hover:bg-white/10"
+          className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg p-2 text-white/80 transition hover:bg-white/10 md:hidden"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          <span
+            className={cn(
+              "h-0.5 w-5 rounded-full bg-current transition-all duration-200",
+              open && "translate-y-2 rotate-45"
+            )}
+          />
+          <span
+            className={cn(
+              "h-0.5 w-5 rounded-full bg-current transition-all duration-200",
+              open && "opacity-0"
+            )}
+          />
+          <span
+            className={cn(
+              "h-0.5 w-5 rounded-full bg-current transition-all duration-200",
+              open && "-translate-y-2 -rotate-45"
+            )}
+          />
         </button>
       </div>
 
       <div
         className={cn(
-          "md:hidden border-t border-white/10 bg-primary",
-          open ? "block" : "hidden"
+          "fixed inset-0 z-40 bg-[#0F172A] transition-all duration-300 ease-out md:hidden",
+          open ? "visible opacity-100" : "invisible opacity-0"
         )}
+        aria-hidden={!open}
       >
-        <nav className="container mx-auto flex flex-col gap-1 px-4 py-4">
-          {navItems.map((item) => {
-            const Comp = item.href.startsWith("#") ? "a" : Link;
-            const props = item.href.startsWith("#")
-              ? { href: item.href, onClick: () => setOpen(false) }
-              : { href: item.href };
-            return (
-              <Comp
-                key={item.href}
-                {...props}
-                className="py-3 text-sm font-medium text-white/80 hover:text-white"
-              >
-                {item.label}
-              </Comp>
-            );
-          })}
-          <div className="mt-4 flex flex-col gap-2">
+        <div
+          className={cn(
+            "flex min-h-full flex-col pt-24 pb-8 transition-transform duration-300",
+            open ? "translate-y-0" : "translate-y-4"
+          )}
+        >
+          <nav className="container mx-auto flex flex-1 flex-col gap-1 px-4">
+            {navItems.map((item) => {
+              const Comp = item.href.startsWith("#") ? "a" : Link;
+              const props =
+                item.href.startsWith("#")
+                  ? { href: item.href, onClick: () => setOpen(false) }
+                  : { href: item.href, onClick: () => setOpen(false) };
+              return (
+                <Comp
+                  key={item.href}
+                  {...props}
+                  className="py-4 text-lg font-medium text-white/80 transition hover:text-white"
+                >
+                  {item.label}
+                </Comp>
+              );
+            })}
+          </nav>
+          <div className="container mx-auto mt-auto flex flex-col gap-3 px-4 pt-8">
             <Link
               href={demoHref}
               onClick={() => setOpen(false)}
-              className="py-3 text-center text-sm font-medium text-white/80"
+              className="flex items-center justify-center gap-2 py-4 text-base font-medium text-white/80"
             >
-              Voir une démo
+              Voir une démo <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="btn-primary rounded-full bg-accent-hex py-3 text-center font-semibold text-white"
+              className="flex items-center justify-center gap-2 rounded-full bg-accent-hex py-4 text-base font-semibold text-white transition hover:brightness-110"
             >
-              Demander une démo <ArrowRight className="inline h-4 w-4" />
+              Demander une démo <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-        </nav>
+        </div>
       </div>
     </header>
   );

@@ -12,22 +12,48 @@ const trades: { label: string; icon: React.ElementType }[] = [
   { label: "Serruriers", icon: Key },
 ];
 
+const pillClassName =
+  "group flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-white/25 bg-white/10 px-4 py-2.5 text-sm font-medium text-white transition duration-200 hover:border-amber-500 hover:bg-amber-500 hover:text-white";
+
+function Pill({ label, Icon }: { label: string; Icon: React.ElementType }) {
+  return (
+    <span className={pillClassName}>
+      <Icon className="h-4 w-4 shrink-0 text-white transition-colors duration-200 group-hover:text-white" aria-hidden />
+      {label}
+    </span>
+  );
+}
+
 export function TrustBar() {
   return (
-    <div className="border-b border-primary/10 bg-bg-light py-6">
+    <div className="border-b border-white/10 bg-[#0F172A] py-6">
       <div className="container mx-auto px-4">
-        <p className="mb-4 text-center text-sm font-medium text-text-primary-dark">
+        <p className="mb-4 text-center text-base font-medium text-white md:text-lg">
           Conçu pour tous les métiers du BTP
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-3">
+      </div>
+
+      {/* Desktop : carousel pleine largeur (jusqu'aux bords de l'écran) */}
+      <div className="hidden w-full overflow-hidden md:block">
+        <div className="flex w-max animate-scroll-trades">
+          <div className="flex shrink-0 gap-3 px-4">
+            {trades.map(({ label, icon: Icon }) => (
+              <Pill key={label} label={label} Icon={Icon} />
+            ))}
+          </div>
+          <div className="flex shrink-0 gap-3 px-4">
+            {trades.map(({ label, icon: Icon }) => (
+              <Pill key={`${label}-2`} label={label} Icon={Icon} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile : scroll horizontal manuel */}
+      <div className="scrollbar-hide -mx-4 overflow-x-auto px-4 md:hidden">
+        <div className="flex w-max shrink-0 gap-3">
           {trades.map(({ label, icon: Icon }) => (
-            <span
-              key={label}
-              className="flex items-center gap-2 rounded-full border border-primary/10 bg-white px-4 py-2.5 text-sm font-medium text-text-primary-dark shadow-sm"
-            >
-              <Icon className="h-4 w-4 text-accent-hex" aria-hidden />
-              {label}
-            </span>
+            <Pill key={label} label={label} Icon={Icon} />
           ))}
         </div>
       </div>

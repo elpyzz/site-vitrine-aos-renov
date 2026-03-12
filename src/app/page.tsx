@@ -2,7 +2,6 @@ import { Hero } from "@/components/landing/Hero";
 import { StatsSection } from "@/components/landing/StatsSection";
 import { ProblemSolution } from "@/components/landing/ProblemSolution";
 import { Features } from "@/components/landing/Features";
-import { SignatureSection } from "@/components/landing/SignatureSection";
 import { AppScreenshots } from "@/components/landing/AppScreenshots";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { ForWho } from "@/components/landing/ForWho";
@@ -20,7 +19,6 @@ export default function HomePage() {
       <StatsSection />
       <ProblemSolution />
       <Features />
-      <SignatureSection />
       <AppScreenshots />
       <HowItWorks />
       <ForWho />

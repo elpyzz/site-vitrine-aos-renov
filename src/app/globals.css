@@ -265,4 +265,34 @@
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: rgba(255, 255, 255, 0.7);
   }
+  /* Nav link — underline amber au hover */
+  .nav-link-underline {
+    @apply relative;
+  }
+  .nav-link-underline::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 rounded-full bg-accent-warm transition-transform duration-200;
+  }
+  .nav-link-underline:hover::after {
+    @apply scale-x-100;
+  }
+  /* Masquer la scrollbar (pilules métiers mobile) */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  /* Carousel métiers — défilement infini (desktop) */
+  @keyframes scroll-trades {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-scroll-trades {
+    animation: scroll-trades 30s linear infinite;
+  }
+  .animate-scroll-trades:hover {
+    animation-play-state: paused;
+  }
 }
