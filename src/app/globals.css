@@ -284,13 +284,4 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  /* Carousel métiers — défilement infini (desktop), continu sans pause */
-  @keyframes scroll-trades {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .animate-scroll-trades {
-    animation: scroll-trades 30s linear infinite;
-    will-change: transform;
-  }
 }

@@ -33,25 +33,8 @@ export function TrustBar() {
         </p>
       </div>
 
-      {/* Desktop : carousel pleine largeur, défilement continu sans trou */}
-      <div className="hidden w-full overflow-hidden md:block">
-        <div className="flex w-max animate-scroll-trades gap-0">
-          <div className="flex shrink-0 gap-3 pl-4 pr-3">
-            {trades.map(({ label, icon: Icon }) => (
-              <Pill key={label} label={label} Icon={Icon} />
-            ))}
-          </div>
-          <div className="flex shrink-0 gap-3 pl-0 pr-4">
-            {trades.map(({ label, icon: Icon }) => (
-              <Pill key={`${label}-2`} label={label} Icon={Icon} />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile : scroll horizontal manuel */}
-      <div className="scrollbar-hide -mx-4 overflow-x-auto px-4 md:hidden">
-        <div className="flex w-max shrink-0 gap-3">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap items-center justify-center gap-3">
           {trades.map(({ label, icon: Icon }) => (
             <Pill key={label} label={label} Icon={Icon} />
           ))}
