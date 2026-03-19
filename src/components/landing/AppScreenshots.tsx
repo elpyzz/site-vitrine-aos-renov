@@ -11,7 +11,7 @@ const tabs = [
     label: "Vue d'ensemble",
     description: "Tous vos indicateurs en un coup d'œil",
     src: "/app-dashboard.png",
-    alt: "Tableau de bord Aos Renov",
+    alt: "Exemple — tableau de bord (interface de référence, personnalisable)",
   },
   {
     id: "devis",
@@ -19,7 +19,7 @@ const tabs = [
     label: "Générateur de devis",
     description: "Devis professionnel en moins de 5 minutes",
     src: "/app-devis.png",
-    alt: "Générateur de devis Aos Renov",
+    alt: "Exemple — générateur de devis (personnalisable)",
   },
   {
     id: "planning",
@@ -27,7 +27,7 @@ const tabs = [
     label: "Planning des chantiers",
     description: "Visualisez toute votre semaine",
     src: "/app-planning.png",
-    alt: "Planning Aos Renov",
+    alt: "Exemple — planning chantiers (personnalisable)",
   },
   {
     id: "facturation",
@@ -35,7 +35,7 @@ const tabs = [
     label: "Facturation",
     description: "Factures conformes BTP, envoyées en 1 clic",
     src: "/app-facturation.png",
-    alt: "Facturation Aos Renov",
+    alt: "Exemple — facturation (personnalisable)",
   },
   {
     id: "estimation",
@@ -43,7 +43,7 @@ const tabs = [
     label: "Estimation par photo",
     description: "IA — uploadez une photo, obtenez une estimation",
     src: "/app-estimation.png",
-    alt: "Estimation par photo Aos Renov",
+    alt: "Exemple — estimation par photo (personnalisable)",
   },
 ];
 
@@ -64,8 +64,11 @@ export function AppScreenshots() {
           <p className="mx-auto mt-3 max-w-2xl text-lg text-white/60">
             Conçu pour aller vite. Intuitif dès le premier jour.
           </p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/55">
+            <strong className="font-semibold text-white/90">Interface de référence</strong> : ce que vous voyez ici est la base — chaque déploiement est adapté à vous (écrans, options, intégrations). C&apos;est <strong className="font-semibold text-white/90">votre</strong> logiciel avec <strong className="font-semibold text-white/90">votre nom de domaine</strong>, pas un espace partagé avec d&apos;autres artisans.
+          </p>
           <p className="mx-auto mt-2 text-sm text-white/40">
-            Un simple avant-goût — l&apos;application propose bien plus.
+            Un aperçu — l&apos;application peut aller plus loin selon votre activité.
           </p>
         </div>
 
@@ -119,7 +122,7 @@ export function AppScreenshots() {
                   <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
                 </div>
                 <div className="ml-4 flex-1 rounded-md bg-white/5 px-3 py-1.5 font-mono text-xs text-white/50">
-                  app.aosrenov.fr
+                  app.votre-entreprise.fr
                 </div>
               </div>
               <div className="relative aspect-video min-h-[200px] overflow-hidden bg-[#0f172a] p-2">

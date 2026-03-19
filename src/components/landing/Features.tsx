@@ -116,6 +116,12 @@ export function Features() {
             </div>
           ))}
         </div>
+        <div className="reveal mt-8 rounded-[20px] border border-amber-300 bg-amber-50 p-8">
+          <h3 className="text-xl font-bold text-[#0F172A]">🔒 Votre app. Rien qu&apos;à vous.</h3>
+          <p className="mt-2 text-sm leading-relaxed text-[hsl(var(--te-body))]">
+            Les écrans du site illustrent notre interface de référence : la vôtre reprendra <strong className="font-semibold text-[#0F172A]">votre</strong> identité. Votre nom, votre logo, votre domaine, vos couleurs. Une instance isolée — vos données n&apos;appartiennent qu&apos;à vous. Aucun autre artisan n&apos;a accès à votre espace.
+          </p>
+        </div>
       </div>
       <SectionWaveToNavy />
     </section>

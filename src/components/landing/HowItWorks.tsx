@@ -6,7 +6,8 @@ import { SectionWaveToNavy } from "./SectionWave";
 const steps = [
   {
     title: "Créez votre compte",
-    description: "Renseignez votre activité et vos informations en quelques minutes. Aucune configuration compliquée.",
+    description:
+      "Renseignez votre activité en quelques minutes. Nous configurons votre espace à votre image : nom, logo, couleurs et votre propre nom de domaine — tout reste ajustable selon vos besoins.",
   },
   {
     title: "Premier devis",

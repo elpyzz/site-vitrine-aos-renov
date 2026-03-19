@@ -59,6 +59,9 @@ export function CtaSection() {
           <p className="reveal mx-auto mt-4 max-w-xl text-center text-lg text-text-secondary">
             Une démo de 15 minutes suffit pour voir si c&apos;est fait pour vous. Sans engagement.
           </p>
+          <p className="reveal mx-auto mt-3 max-w-2xl text-center text-sm text-text-secondary/90">
+            Nous vous montrons l&apos;interface de référence : votre futur espace sera à <strong className="font-semibold text-text-primary">votre image</strong> (marque, couleurs, options) avec <strong className="font-semibold text-text-primary">votre nom de domaine</strong>.
+          </p>
           <a href="tel:+3369430343" className="reveal mt-6 block text-center text-3xl font-bold text-text-primary md:text-4xl">
             📞 07 69 43 03 43
           </a>
@@ -68,7 +71,7 @@ export function CtaSection() {
           <div className="reveal mx-auto mt-10 max-w-2xl rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur md:p-8">
             <span className="te-section-short-title text-accent-hex">Contact</span>
             <p className="mt-3 text-text-secondary">
-              Laissez vos coordonnées, on vous rappelle.
+              Laissez vos coordonnées, on vous rappelle pour caler une démo et parler de <strong className="font-semibold text-text-primary">votre</strong> configuration (personnalisation + domaine).
             </p>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <div>

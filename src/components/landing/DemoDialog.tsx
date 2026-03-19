@@ -20,7 +20,7 @@ export function DemoDialog({ open, onOpenChange }: DemoDialogProps) {
         <DialogHeader>
           <DialogTitle>Voir une démo Aos Renov</DialogTitle>
           <DialogDescription>
-            Découvrez en quelques minutes comment Aos Renov simplifie vos devis, factures et plannings.
+            Découvrez en quelques minutes comment Aos Renov simplifie vos devis, factures et plannings. La démo présente l&apos;interface de référence : votre déploiement sera à votre marque, avec vos couleurs et votre propre nom de domaine.
           </DialogDescription>
         </DialogHeader>
         <div className="aspect-video w-full rounded-lg bg-[hsl(var(--muted))] flex items-center justify-center">

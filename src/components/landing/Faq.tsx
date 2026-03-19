@@ -8,6 +8,10 @@ import {
 
 const faqItems = [
   {
+    q: "Est-ce la même application pour tout le monde ?",
+    a: "Les captures et la démo montrent notre interface de référence. En production, vous avez votre propre déploiement : votre nom, votre logo, vos couleurs, les options utiles pour votre métier et votre propre nom de domaine. Rien n'est figé : on ajuste avec vous au fil du temps.",
+  },
+  {
     q: "Je travaille seul ou en petite équipe, est-ce fait pour moi ?",
     a: "Oui. Aos Renov est pensé pour les artisans indépendants et les petites structures. Devis, factures et planning : tout est prévu pour gérer votre activité au quotidien sans usine à gaz.",
   },
@@ -33,7 +37,7 @@ const faqItems = [
   },
   {
     q: "Combien ça me coûtera réellement ?",
-    a: "Plusieurs formules existent selon vos besoins. Consultez la section Tarifs ou demandez une démo pour une offre adaptée à votre activité.",
+    a: "Les tarifs sont sur mesure selon votre configuration (personnalisation, domaine, besoins). Consultez la section « Tarifs sur mesure » ou demandez une démo : nous vous proposons un devis adapté à votre activité.",
   },
   {
     q: "J'ai besoin d'aide pour démarrer, c'est prévu ?",

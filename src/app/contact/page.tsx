@@ -58,6 +58,9 @@ export default function ContactPage() {
         <p className="mt-2 text-[hsl(var(--muted-foreground))]">
           Demandez une démo ou posez-nous vos questions. Nous vous recontactons rapidement.
         </p>
+        <p className="mt-3 text-sm text-[hsl(var(--muted-foreground))]">
+          Les visuels du site montrent notre interface de référence : votre espace sera déployé à <strong className="font-semibold text-foreground">votre marque</strong>, avec <strong className="font-semibold text-foreground">votre nom de domaine</strong> et les réglages adaptés à votre activité.
+        </p>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-5">
           <div>

@@ -31,6 +31,9 @@ export function Hero() {
             <p className="reveal mt-6 max-w-xl text-lg text-text-secondary">
               Aos Renov centralise vos devis, factures, relances et planning en un seul endroit. Simple. Rapide. Conçu pour le terrain.
             </p>
+            <p className="reveal mt-4 max-w-xl text-sm leading-relaxed text-text-secondary/90">
+              Les visuels du site montrent notre <strong className="font-semibold text-text-primary">interface de référence</strong> : chaque client reçoit <strong className="font-semibold text-text-primary">son</strong> logiciel — nom, logo, couleurs, options et <strong className="font-semibold text-text-primary">votre propre nom de domaine</strong>. Tout est modifiable et ajustable selon vos besoins.
+            </p>
             <div className="reveal mt-8 flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
@@ -51,6 +54,9 @@ export function Hero() {
               <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-success" /> Support humain</span>
               <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-success" /> ✍️ Signature électronique (SignWell)</span>
             </p>
+            <div className="reveal mt-4 inline-flex items-center rounded-full border border-success/40 bg-success/10 px-4 py-2 text-sm font-medium text-text-primary">
+              ✅ Factures conformes à la loi de facturation électronique obligatoire 2027 (Factur-X EN 16931)
+            </div>
             <div className="reveal mt-8 flex items-center gap-3">
               <div className="flex -space-x-2">
                 {[1, 2, 3].map((i) => (
@@ -78,7 +84,7 @@ export function Hero() {
                 >
                   <Image
                     src="/hero-aos-renov.png"
-                    alt="Aperçu de l'application Aos Renov"
+                    alt="Exemple d&apos;interface de référence Aos Renov (personnalisable : marque, couleurs et domaine à vous)"
                     width={1600}
                     height={1200}
                     className="h-full w-full object-cover object-top"
@@ -95,7 +101,7 @@ export function Hero() {
                   open={heroLightboxOpen}
                   onOpenChange={setHeroLightboxOpen}
                   src="/hero-aos-renov.png"
-                  alt="Aos Renov - Application"
+                  alt="Exemple d&apos;interface personnalisable — votre espace à votre nom de domaine"
                 />
               </div>
               {/* Floating badges — hidden on mobile */}
