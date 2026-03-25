@@ -68,7 +68,7 @@ export function AppScreenshots() {
             <strong className="font-semibold text-white/90">Interface de référence</strong> : ce que vous voyez ici est la base — chaque déploiement est adapté à vous (écrans, options, intégrations). C&apos;est <strong className="font-semibold text-white/90">votre</strong> logiciel avec <strong className="font-semibold text-white/90">votre nom de domaine</strong>, pas un espace partagé avec d&apos;autres artisans.
           </p>
           <p className="mx-auto mt-2 text-sm text-white/40">
-            Un aperçu — l&apos;application peut aller plus loin selon votre activité.
+            Un aperçu — toutes les fonctionnalités ne sont pas affichées ici. L&apos;application peut aller plus loin selon votre activité.
           </p>
         </div>
 

@@ -85,6 +85,7 @@ export function Hero() {
                   <div className="absolute left-3 top-3 z-20 rounded-lg bg-black/60 px-3 py-1.5 text-left text-white backdrop-blur">
                     <p className="text-xs font-semibold">Dupont Paysage</p>
                     <p className="text-[11px] text-white/80">app.dupont-paysage.fr</p>
+                    <p className="mt-0.5 text-[11px] text-white/60">Aperçu — tout n&apos;est pas affiché</p>
                   </div>
                   <Image
                     src="/hero-aos-renov.png"
