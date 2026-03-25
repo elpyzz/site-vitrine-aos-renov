@@ -80,8 +80,12 @@ export function Hero() {
                 <button
                   type="button"
                   onClick={() => setHeroLightboxOpen(true)}
-                  className="block aspect-[4/3] w-full overflow-hidden focus:outline-none focus:ring-2 focus:ring-accent-hex"
+                  className="relative block aspect-[4/3] w-full overflow-hidden focus:outline-none focus:ring-2 focus:ring-accent-hex"
                 >
+                  <div className="absolute left-3 top-3 z-20 rounded-lg bg-black/60 px-3 py-1.5 text-left text-white backdrop-blur">
+                    <p className="text-xs font-semibold">Dupont Paysage</p>
+                    <p className="text-[11px] text-white/80">app.dupont-paysage.fr</p>
+                  </div>
                   <Image
                     src="/hero-aos-renov.png"
                     alt="Exemple d&apos;interface de référence Aos Renov (personnalisable : marque, couleurs et domaine à vous)"

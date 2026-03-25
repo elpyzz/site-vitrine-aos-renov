@@ -11,6 +11,9 @@ export function Pricing() {
         <p className="reveal mx-auto mt-4 max-w-2xl text-center text-sm text-text-secondary/90">
           Vous ne payez pas pour une « place » dans une app unique : nous déployons <strong className="font-semibold text-text-primary-dark">votre</strong> instance — marque, réglages et <strong className="font-semibold text-text-primary-dark">votre domaine</strong>. Les besoins évoluent : l&apos;outil s&apos;ajuste avec vous.
         </p>
+        <p className="reveal mx-auto mt-3 max-w-2xl text-center text-sm text-text-secondary/70">
+          Un setup unique pour tout configurer + un abonnement mensuel sans engagement. Tout est adapté à votre activité.
+        </p>
       </div>
     </section>
   );

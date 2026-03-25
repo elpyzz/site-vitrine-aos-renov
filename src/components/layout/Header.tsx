@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ArrowRight, Hammer } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -27,7 +28,14 @@ export function Header() {
           href="/"
           className="flex items-center gap-2.5 text-[1.25rem] font-bold text-white"
         >
-          <Hammer className="h-7 w-7 shrink-0 text-accent-warm" aria-hidden />
+          <Image
+            src="/logo-aos-renov.png"
+            alt="Logo Aos Renov"
+            width={30}
+            height={30}
+            className="h-7 w-7 shrink-0 rounded-md object-cover"
+            priority
+          />
           <span>Aos Renov</span>
         </Link>
 

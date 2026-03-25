@@ -5,9 +5,9 @@ import { SectionWaveToNavy } from "./SectionWave";
 
 const steps = [
   {
-    title: "Créez votre compte",
+    title: "Nous configurons tout pour vous",
     description:
-      "Renseignez votre activité en quelques minutes. Nous configurons votre espace à votre image : nom, logo, couleurs et votre propre nom de domaine — tout reste ajustable selon vos besoins.",
+      "Partagez votre logo et vos infos — Nous déployons votre app en quelques jours. Vous recevez un accès clé en main, à votre nom, sur votre domaine.",
   },
   {
     title: "Premier devis",
@@ -70,7 +70,7 @@ export function HowItWorks() {
         <div className="mb-14 text-center reveal">
           <span className="section-label-light mx-auto inline-block">Processus</span>
           <h2 className="mt-4 font-display text-3xl font-extrabold text-[#0F172A] md:text-4xl">
-            Démarrez en moins de 10 minutes
+            Démarrez dès cette semaine
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-lg text-[hsl(var(--te-body))]">
             Simple, rapide, sans prise de tête.

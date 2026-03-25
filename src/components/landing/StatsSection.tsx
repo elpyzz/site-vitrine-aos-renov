@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 5, suffix: "h/semaine", label: "économisées en moyenne" },
-  { value: 1, suffix: " clic", label: "devis → facture" },
-  { value: 40, suffix: "%", label: "de stress admin en moins" },
+  { value: 5, suffix: " min", label: "pour créer un devis complet" },
+  { value: 1, suffix: " clic", label: "devis → facture, zéro ressaisie" },
+  { value: 2027, suffix: "", label: "factures déjà conformes à la loi" },
 ];
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
