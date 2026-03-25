@@ -19,7 +19,7 @@ const steps = [
   },
   {
     title: "Vous êtes payé plus vite",
-    description: "Relances automatiques, factures claires : vos clients paient sans attendre.",
+    description: "Relances en 1 clic, factures claires : vos clients paient sans attendre.",
   },
 ];
 
